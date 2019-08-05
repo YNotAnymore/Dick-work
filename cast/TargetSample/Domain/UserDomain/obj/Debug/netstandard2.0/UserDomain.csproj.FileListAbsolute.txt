@@ -1,0 +1,12 @@
+G:\dick\cast\TargetSample\Domain\UserDomain\bin\Debug\netstandard2.0\UserDomain.deps.json
+G:\dick\cast\TargetSample\Domain\UserDomain\bin\Debug\netstandard2.0\UserDomain.dll
+G:\dick\cast\TargetSample\Domain\UserDomain\bin\Debug\netstandard2.0\UserDomain.pdb
+G:\dick\cast\TargetSample\Domain\UserDomain\obj\Debug\netstandard2.0\UserDomain.csprojAssemblyReference.cache
+G:\dick\cast\TargetSample\Domain\UserDomain\obj\Debug\netstandard2.0\UserDomain.csproj.CoreCompileInputs.cache
+G:\dick\cast\TargetSample\Domain\UserDomain\obj\Debug\netstandard2.0\UserDomain.AssemblyInfoInputs.cache
+G:\dick\cast\TargetSample\Domain\UserDomain\obj\Debug\netstandard2.0\UserDomain.AssemblyInfo.cs
+G:\dick\cast\TargetSample\Domain\UserDomain\obj\Debug\netstandard2.0\UserDomain.dll
+G:\dick\cast\TargetSample\Domain\UserDomain\obj\Debug\netstandard2.0\UserDomain.pdb
+G:\dick\cast\TargetSample\Domain\UserDomain\bin\Debug\netstandard2.0\DomainCore.dll
+G:\dick\cast\TargetSample\Domain\UserDomain\bin\Debug\netstandard2.0\DomainCore.pdb
+G:\dick\cast\TargetSample\Domain\UserDomain\obj\Debug\netstandard2.0\UserDomain.csproj.CopyComplete

@@ -1,0 +1,16 @@
+G:\dick\cast\TargetSample\Application\OrderApplication\bin\Debug\netstandard2.0\OrderApplication.deps.json
+G:\dick\cast\TargetSample\Application\OrderApplication\bin\Debug\netstandard2.0\OrderApplication.dll
+G:\dick\cast\TargetSample\Application\OrderApplication\bin\Debug\netstandard2.0\DomainCore.dll
+G:\dick\cast\TargetSample\Application\OrderApplication\bin\Debug\netstandard2.0\OrderDomain.dll
+G:\dick\cast\TargetSample\Application\OrderApplication\bin\Debug\netstandard2.0\OrderDomain.pdb
+G:\dick\cast\TargetSample\Application\OrderApplication\bin\Debug\netstandard2.0\DomainCore.pdb
+G:\dick\cast\TargetSample\Application\OrderApplication\obj\Debug\netstandard2.0\OrderApplication.csprojAssemblyReference.cache
+G:\dick\cast\TargetSample\Application\OrderApplication\obj\Debug\netstandard2.0\OrderApplication.csproj.CoreCompileInputs.cache
+G:\dick\cast\TargetSample\Application\OrderApplication\obj\Debug\netstandard2.0\OrderApplication.AssemblyInfoInputs.cache
+G:\dick\cast\TargetSample\Application\OrderApplication\obj\Debug\netstandard2.0\OrderApplication.AssemblyInfo.cs
+G:\dick\cast\TargetSample\Application\OrderApplication\obj\Debug\netstandard2.0\OrderApplication.csproj.CopyComplete
+G:\dick\cast\TargetSample\Application\OrderApplication\bin\Debug\netstandard2.0\OrderApplication.pdb
+G:\dick\cast\TargetSample\Application\OrderApplication\bin\Debug\netstandard2.0\Microsoft.Extensions.Http.dll
+G:\dick\cast\TargetSample\Application\OrderApplication\bin\Debug\netstandard2.0\Microsoft.Extensions.Http.xml
+G:\dick\cast\TargetSample\Application\OrderApplication\obj\Debug\netstandard2.0\OrderApplication.dll
+G:\dick\cast\TargetSample\Application\OrderApplication\obj\Debug\netstandard2.0\OrderApplication.pdb

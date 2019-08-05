@@ -1,0 +1,9 @@
+G:\dick\cast\TargetSample\Domain\DomainCore\bin\Debug\netstandard2.0\DomainCore.deps.json
+G:\dick\cast\TargetSample\Domain\DomainCore\bin\Debug\netstandard2.0\DomainCore.dll
+G:\dick\cast\TargetSample\Domain\DomainCore\bin\Debug\netstandard2.0\DomainCore.pdb
+G:\dick\cast\TargetSample\Domain\DomainCore\obj\Debug\netstandard2.0\DomainCore.csprojAssemblyReference.cache
+G:\dick\cast\TargetSample\Domain\DomainCore\obj\Debug\netstandard2.0\DomainCore.csproj.CoreCompileInputs.cache
+G:\dick\cast\TargetSample\Domain\DomainCore\obj\Debug\netstandard2.0\DomainCore.AssemblyInfoInputs.cache
+G:\dick\cast\TargetSample\Domain\DomainCore\obj\Debug\netstandard2.0\DomainCore.AssemblyInfo.cs
+G:\dick\cast\TargetSample\Domain\DomainCore\obj\Debug\netstandard2.0\DomainCore.dll
+G:\dick\cast\TargetSample\Domain\DomainCore\obj\Debug\netstandard2.0\DomainCore.pdb

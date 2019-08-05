@@ -1,0 +1,16 @@
+G:\dick\cast\TargetSample\Application\UserApplication\bin\Debug\netstandard2.0\DomainCore.dll
+G:\dick\cast\TargetSample\Application\UserApplication\bin\Debug\netstandard2.0\UserDomain.dll
+G:\dick\cast\TargetSample\Application\UserApplication\bin\Debug\netstandard2.0\UserDomain.pdb
+G:\dick\cast\TargetSample\Application\UserApplication\obj\Debug\netstandard2.0\UserApplication.csprojAssemblyReference.cache
+G:\dick\cast\TargetSample\Application\UserApplication\obj\Debug\netstandard2.0\UserApplication.csproj.CoreCompileInputs.cache
+G:\dick\cast\TargetSample\Application\UserApplication\obj\Debug\netstandard2.0\UserApplication.AssemblyInfoInputs.cache
+G:\dick\cast\TargetSample\Application\UserApplication\obj\Debug\netstandard2.0\UserApplication.AssemblyInfo.cs
+G:\dick\cast\TargetSample\Application\UserApplication\bin\Debug\netstandard2.0\Microsoft.Extensions.Http.dll
+G:\dick\cast\TargetSample\Application\UserApplication\bin\Debug\netstandard2.0\Microsoft.Extensions.Http.xml
+G:\dick\cast\TargetSample\Application\UserApplication\bin\Debug\netstandard2.0\UserApplication.deps.json
+G:\dick\cast\TargetSample\Application\UserApplication\bin\Debug\netstandard2.0\UserApplication.dll
+G:\dick\cast\TargetSample\Application\UserApplication\bin\Debug\netstandard2.0\UserApplication.pdb
+G:\dick\cast\TargetSample\Application\UserApplication\bin\Debug\netstandard2.0\DomainCore.pdb
+G:\dick\cast\TargetSample\Application\UserApplication\obj\Debug\netstandard2.0\UserApplication.csproj.CopyComplete
+G:\dick\cast\TargetSample\Application\UserApplication\obj\Debug\netstandard2.0\UserApplication.dll
+G:\dick\cast\TargetSample\Application\UserApplication\obj\Debug\netstandard2.0\UserApplication.pdb

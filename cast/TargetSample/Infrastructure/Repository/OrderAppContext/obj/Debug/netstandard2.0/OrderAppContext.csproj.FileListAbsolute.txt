@@ -1,0 +1,16 @@
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\bin\Debug\netstandard2.0\OrderAppContext.deps.json
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\bin\Debug\netstandard2.0\OrderAppContext.dll
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\obj\Debug\netstandard2.0\OrderAppContext.csproj.CoreCompileInputs.cache
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\obj\Debug\netstandard2.0\OrderAppContext.AssemblyInfoInputs.cache
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\obj\Debug\netstandard2.0\OrderAppContext.AssemblyInfo.cs
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\bin\Debug\netstandard2.0\DomainCore.dll
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\bin\Debug\netstandard2.0\DomainCore.pdb
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\obj\Debug\netstandard2.0\OrderAppContext.csprojAssemblyReference.cache
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\obj\Debug\netstandard2.0\OrderAppContext.csproj.CopyComplete
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\bin\Debug\netstandard2.0\OrderAppContext.pdb
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\bin\Debug\netstandard2.0\UserDomain.dll
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\bin\Debug\netstandard2.0\UserDomain.pdb
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\obj\Debug\netstandard2.0\OrderAppContext.dll
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\obj\Debug\netstandard2.0\OrderAppContext.pdb
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\bin\Debug\netstandard2.0\OrderDomain.dll
+G:\dick\cast\TargetSample\Infrastructure\Repository\OrderAppContext\bin\Debug\netstandard2.0\OrderDomain.pdb

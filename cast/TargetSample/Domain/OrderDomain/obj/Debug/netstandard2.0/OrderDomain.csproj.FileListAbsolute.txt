@@ -1,0 +1,12 @@
+G:\dick\cast\TargetSample\Domain\OrderDomain\bin\Debug\netstandard2.0\OrderDomain.deps.json
+G:\dick\cast\TargetSample\Domain\OrderDomain\bin\Debug\netstandard2.0\OrderDomain.dll
+G:\dick\cast\TargetSample\Domain\OrderDomain\bin\Debug\netstandard2.0\OrderDomain.pdb
+G:\dick\cast\TargetSample\Domain\OrderDomain\bin\Debug\netstandard2.0\DomainCore.dll
+G:\dick\cast\TargetSample\Domain\OrderDomain\bin\Debug\netstandard2.0\DomainCore.pdb
+G:\dick\cast\TargetSample\Domain\OrderDomain\obj\Debug\netstandard2.0\OrderDomain.csprojAssemblyReference.cache
+G:\dick\cast\TargetSample\Domain\OrderDomain\obj\Debug\netstandard2.0\OrderDomain.csproj.CoreCompileInputs.cache
+G:\dick\cast\TargetSample\Domain\OrderDomain\obj\Debug\netstandard2.0\OrderDomain.AssemblyInfoInputs.cache
+G:\dick\cast\TargetSample\Domain\OrderDomain\obj\Debug\netstandard2.0\OrderDomain.AssemblyInfo.cs
+G:\dick\cast\TargetSample\Domain\OrderDomain\obj\Debug\netstandard2.0\OrderDomain.csproj.CopyComplete
+G:\dick\cast\TargetSample\Domain\OrderDomain\obj\Debug\netstandard2.0\OrderDomain.dll
+G:\dick\cast\TargetSample\Domain\OrderDomain\obj\Debug\netstandard2.0\OrderDomain.pdb

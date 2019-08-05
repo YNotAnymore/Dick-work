@@ -1,0 +1,14 @@
+G:\dick\cast\Vlxm.Model\bin\Debug\Vlxm.Model.dll.config
+G:\dick\cast\Vlxm.Model\bin\Debug\Vlxm.Model.dll
+G:\dick\cast\Vlxm.Model\bin\Debug\Vlxm.Model.pdb
+G:\dick\cast\Vlxm.Model\bin\Debug\EntityFramework.dll
+G:\dick\cast\Vlxm.Model\bin\Debug\EntityFramework.SqlServer.dll
+G:\dick\cast\Vlxm.Model\bin\Debug\EntityFramework.xml
+G:\dick\cast\Vlxm.Model\bin\Debug\EntityFramework.SqlServer.xml
+G:\dick\cast\Vlxm.Model\obj\Debug\Vlxm.Model.Migrations.FirstInit.resources
+G:\dick\cast\Vlxm.Model\obj\Debug\Vlxm.Model.csproj.GenerateResource.cache
+G:\dick\cast\Vlxm.Model\obj\Debug\Vlxm.Model.csproj.CoreCompileInputs.cache
+G:\dick\cast\Vlxm.Model\obj\Debug\Vlxm.Model.csproj.CopyComplete
+G:\dick\cast\Vlxm.Model\obj\Debug\Vlxm.Model.dll
+G:\dick\cast\Vlxm.Model\obj\Debug\Vlxm.Model.pdb
+G:\dick\cast\Vlxm.Model\obj\Debug\Vlxm.Model.csprojAssemblyReference.cache

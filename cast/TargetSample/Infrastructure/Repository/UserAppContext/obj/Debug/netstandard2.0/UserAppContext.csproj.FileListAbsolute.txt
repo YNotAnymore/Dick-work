@@ -1,0 +1,14 @@
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\bin\Debug\netstandard2.0\UserAppContext.deps.json
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\bin\Debug\netstandard2.0\UserAppContext.dll
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\obj\Debug\netstandard2.0\UserAppContext.csproj.CoreCompileInputs.cache
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\obj\Debug\netstandard2.0\UserAppContext.AssemblyInfoInputs.cache
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\obj\Debug\netstandard2.0\UserAppContext.AssemblyInfo.cs
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\bin\Debug\netstandard2.0\DomainCore.dll
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\obj\Debug\netstandard2.0\UserAppContext.csprojAssemblyReference.cache
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\bin\Debug\netstandard2.0\UserDomain.dll
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\bin\Debug\netstandard2.0\UserDomain.pdb
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\bin\Debug\netstandard2.0\UserAppContext.pdb
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\bin\Debug\netstandard2.0\DomainCore.pdb
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\obj\Debug\netstandard2.0\UserAppContext.csproj.CopyComplete
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\obj\Debug\netstandard2.0\UserAppContext.dll
+G:\dick\cast\TargetSample\Infrastructure\Repository\UserAppContext\obj\Debug\netstandard2.0\UserAppContext.pdb
