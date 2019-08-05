@@ -26,13 +26,13 @@ namespace OrderAppContext
         {
         }
 
-        protected OrderDbContext(IMediator mediator,ILogger<OrderDbContext> logger)
+        public OrderDbContext(DbContextOptions options, IMediator mediator, ILogger<OrderDbContext> logger) : base(options)
         {
-            _mediator = mediator;
+            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             _logger = logger;
         }
-
-        public OrderDbContext(DbContextOptions options, IMediator mediator, OrderRepository orderRepository,
+        
+        public OrderDbContext(DbContextOptions<OrderDbContext> options, IMediator mediator, OrderRepository orderRepository,
             ILogger<OrderDbContext> logger) : base(options)
         {
             _mediator = mediator;

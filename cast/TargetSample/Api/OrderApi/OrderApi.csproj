@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Application\OrderApplication\OrderApplication.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Repository\OrderAppContext\OrderAppContext.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Repository\UserAppContext\UserAppContext.csproj" />
   </ItemGroup>
 
 </Project>

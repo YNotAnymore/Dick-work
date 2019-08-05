@@ -259,23 +259,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "C:\\Users\\monster_yj\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj",
+      "projectUniqueName": "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj",
       "projectName": "UserApplication",
-      "projectPath": "G:\\dick\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "G:\\dick\\cast\\TargetSample\\Application\\UserApplication\\obj\\",
+      "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj",
+      "packagesPath": "C:\\Users\\monster_yj\\.nuget\\packages\\",
+      "outputPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\UserApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\monster_yj\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\ServiceFabricSDK.config"
       ],
@@ -290,8 +290,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj": {
-              "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj"
+            "D:\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj": {
+              "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj"
             }
           }
         }

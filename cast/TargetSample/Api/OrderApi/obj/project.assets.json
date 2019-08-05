@@ -4812,6 +4812,23 @@
           "bin/placeholder/OrderDomain.dll": {}
         }
       },
+      "UserAppContext/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "DomainCore": "1.0.0",
+          "MediatR": "7.0.0",
+          "Microsoft.EntityFrameworkCore": "2.2.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.6",
+          "UserDomain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UserAppContext.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UserAppContext.dll": {}
+        }
+      },
       "UserDomain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -8062,7 +8079,6 @@
       "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -8957,7 +8973,6 @@
       "path": "system.composition.attributedmodel/1.0.31",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.AttributedModel.dll",
@@ -8972,7 +8987,6 @@
       "path": "system.composition.convention/1.0.31",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.Convention.dll",
@@ -9015,7 +9029,6 @@
       "path": "system.composition.typedparts/1.0.31",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.TypedParts.dll",
@@ -9141,6 +9154,7 @@
       "path": "system.diagnostics.contracts/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12638,7 +12652,6 @@
       "path": "system.threading.tasks.parallel/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13088,6 +13101,11 @@
       "path": "../../Domain/OrderDomain/OrderDomain.csproj",
       "msbuildProject": "../../Domain/OrderDomain/OrderDomain.csproj"
     },
+    "UserAppContext/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/Repository/UserAppContext/UserAppContext.csproj",
+      "msbuildProject": "../../Infrastructure/Repository/UserAppContext/UserAppContext.csproj"
+    },
     "UserDomain/1.0.0": {
       "type": "project",
       "path": "../../Domain/UserDomain/UserDomain.csproj",
@@ -13103,27 +13121,28 @@
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
       "OrderAppContext >= 1.0.0",
-      "OrderApplication >= 1.0.0"
+      "OrderApplication >= 1.0.0",
+      "UserAppContext >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "C:\\Users\\monster_yj\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Api\\OrderApi\\OrderApi.csproj",
+      "projectUniqueName": "D:\\git\\Dick-work\\cast\\TargetSample\\Api\\OrderApi\\OrderApi.csproj",
       "projectName": "OrderApi",
-      "projectPath": "G:\\dick\\cast\\TargetSample\\Api\\OrderApi\\OrderApi.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "G:\\dick\\cast\\TargetSample\\Api\\OrderApi\\obj\\",
+      "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Api\\OrderApi\\OrderApi.csproj",
+      "packagesPath": "C:\\Users\\monster_yj\\.nuget\\packages\\",
+      "outputPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Api\\OrderApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\monster_yj\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\ServiceFabricSDK.config"
       ],
@@ -13138,11 +13157,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "G:\\dick\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj": {
-              "projectPath": "G:\\dick\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj"
+            "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj": {
+              "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj"
             },
-            "G:\\dick\\cast\\TargetSample\\Infrastructure\\Repository\\OrderAppContext\\OrderAppContext.csproj": {
-              "projectPath": "G:\\dick\\cast\\TargetSample\\Infrastructure\\Repository\\OrderAppContext\\OrderAppContext.csproj"
+            "D:\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\OrderAppContext\\OrderAppContext.csproj": {
+              "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\OrderAppContext\\OrderAppContext.csproj"
+            },
+            "D:\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj": {
+              "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj"
             }
           }
         }
