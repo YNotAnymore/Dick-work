@@ -11,9 +11,8 @@ using OrderDomain.Model;
 
 namespace OrderAppContext
 {
-    public class OrderRepository: IOrderRepository
+    public class OrderRepository : IOrderRepository
     {
-
         private OrderDbContext _dbContext;
 
         public OrderRepository(OrderDbContext dbContext)
@@ -22,11 +21,27 @@ namespace OrderAppContext
         }
 
         public IUnitOfWork UnitOfWork => _dbContext;
+
         public async Task<IEnumerable<Order>> GetListByUserAsync(int userId)
         {
             var list = await _dbContext.Orders.Where(u => u.UserId == userId).ToListAsync();
 
             return list;
+        }
+
+        public async Task<bool> CreateItem(Order order)
+        {
+            order.CreateTime = DateTime.Now;
+            order.Id = 0;
+
+            await _dbContext.Orders.AddAsync(order);
+
+            return _dbContext.Commit();
+        }
+
+        public Task<int> GetCount()
+        {
+            return _dbContext.Orders.CountAsync();
         }
     }
 }

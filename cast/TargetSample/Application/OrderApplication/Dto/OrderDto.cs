@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MediatR;
 
 namespace OrderApplication.Dto
 {
-    public class OrderDto
+    public class OrderDto : INotification
     {
         public int Id { get; set; }
 

@@ -11,6 +11,8 @@ namespace OrderDomain
     {
 
         Task<IEnumerable<Order>> GetListByUserAsync(int userId);
+        Task<bool> CreateItem(Order order);
 
+        Task<int> GetCount();
     }
 }

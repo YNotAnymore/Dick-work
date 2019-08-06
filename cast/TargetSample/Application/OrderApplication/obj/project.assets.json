@@ -259,23 +259,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\monster_yj\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj",
+      "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj",
       "projectName": "OrderApplication",
-      "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj",
-      "packagesPath": "C:\\Users\\monster_yj\\.nuget\\packages\\",
-      "outputPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\obj\\",
+      "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\monster_yj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\ServiceFabricSDK.config"
       ],
@@ -290,8 +290,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj": {
-              "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj"
+            "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj": {
+              "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj"
             }
           }
         }

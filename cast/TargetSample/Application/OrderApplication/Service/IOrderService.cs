@@ -11,5 +11,9 @@ namespace OrderApplication.Service
 
         Task<IEnumerable<Order>> GetListByUser(int userId);
 
+        Task<bool> CreateItem(Order order);
+
+        Task<int> GetCount();
+
     }
 }

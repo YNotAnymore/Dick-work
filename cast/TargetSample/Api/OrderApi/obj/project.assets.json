@@ -2928,6 +2928,15 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "Polly/7.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Polly.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -8262,6 +8271,21 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "Polly/7.1.0": {
+      "sha512": "mpQsvlEn4ipgICh5CGyVLPV93RFVzOrBG7wPZfzY8gExh7XgWQn0GCDY9nudbUEJ12UiGPP9i4+CohghBvzhmg==",
+      "type": "package",
+      "path": "polly/7.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.1/Polly.dll",
+        "lib/netstandard1.1/Polly.xml",
+        "lib/netstandard2.0/Polly.dll",
+        "lib/netstandard2.0/Polly.xml",
+        "polly.7.1.0.nupkg.sha512",
+        "polly.nuspec"
+      ]
+    },
     "Remotion.Linq/2.2.0": {
       "sha512": "fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
       "type": "package",
@@ -13122,27 +13146,28 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
       "OrderAppContext >= 1.0.0",
       "OrderApplication >= 1.0.0",
+      "Polly >= 7.1.0",
       "UserAppContext >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\monster_yj\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git\\Dick-work\\cast\\TargetSample\\Api\\OrderApi\\OrderApi.csproj",
+      "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Api\\OrderApi\\OrderApi.csproj",
       "projectName": "OrderApi",
-      "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Api\\OrderApi\\OrderApi.csproj",
-      "packagesPath": "C:\\Users\\monster_yj\\.nuget\\packages\\",
-      "outputPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Api\\OrderApi\\obj\\",
+      "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Api\\OrderApi\\OrderApi.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Api\\OrderApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\monster_yj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\ServiceFabricSDK.config"
       ],
@@ -13157,14 +13182,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj": {
-              "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj"
+            "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj": {
+              "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj"
             },
-            "D:\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\OrderAppContext\\OrderAppContext.csproj": {
-              "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\OrderAppContext\\OrderAppContext.csproj"
+            "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\OrderAppContext\\OrderAppContext.csproj": {
+              "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\OrderAppContext\\OrderAppContext.csproj"
             },
-            "D:\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj": {
-              "projectPath": "D:\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj"
+            "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj": {
+              "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj"
             }
           }
         }
@@ -13206,6 +13231,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.2.3, )"
+          },
+          "Polly": {
+            "target": "Package",
+            "version": "[7.1.0, )"
           }
         },
         "imports": [

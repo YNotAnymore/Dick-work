@@ -36,5 +36,15 @@ namespace OrderApplication.Service
         {
             return _orderRepository.GetListByUserAsync(userId);
         }
+
+        public Task<bool> CreateItem(Order order)
+        {
+            return _orderRepository.CreateItem(order);
+        }
+
+        public Task<int> GetCount()
+        {
+            return _orderRepository.GetCount();
+        }
     }
 }

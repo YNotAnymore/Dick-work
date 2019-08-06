@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\dick\\cast\\TargetSample\\WebApp\\UserApi\\UserApi.csproj": {}
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\WebApp\\UserApi\\UserApi.csproj": {}
   },
   "projects": {
-    "G:\\dick\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj": {
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj",
+        "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj",
         "projectName": "UserApplication",
-        "projectPath": "G:\\dick\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj",
+        "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\dick\\cast\\TargetSample\\Application\\UserApplication\\obj\\",
+        "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\UserApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -32,8 +32,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj": {
-                "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj"
+              "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj": {
+                "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj"
               }
             }
           }
@@ -70,14 +70,14 @@
         }
       }
     },
-    "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
+        "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
         "projectName": "DomainCore",
-        "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
+        "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\obj\\",
+        "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -124,14 +124,14 @@
         }
       }
     },
-    "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj": {
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj",
+        "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj",
         "projectName": "UserDomain",
-        "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj",
+        "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\obj\\",
+        "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -152,8 +152,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
-                "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj"
+              "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
+                "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj"
               }
             }
           }
@@ -182,14 +182,14 @@
         }
       }
     },
-    "G:\\dick\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj": {
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj",
+        "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj",
         "projectName": "UserAppContext",
-        "projectPath": "G:\\dick\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj",
+        "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\dick\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\obj\\",
+        "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -210,11 +210,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
-                "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj"
+              "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
+                "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj"
               },
-              "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj": {
-                "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj"
+              "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj": {
+                "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\UserDomain\\UserDomain.csproj"
               }
             }
           }
@@ -255,14 +255,14 @@
         }
       }
     },
-    "G:\\dick\\cast\\TargetSample\\WebApp\\UserApi\\UserApi.csproj": {
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\WebApp\\UserApi\\UserApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\dick\\cast\\TargetSample\\WebApp\\UserApi\\UserApi.csproj",
+        "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\WebApp\\UserApi\\UserApi.csproj",
         "projectName": "UserApi",
-        "projectPath": "G:\\dick\\cast\\TargetSample\\WebApp\\UserApi\\UserApi.csproj",
+        "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\WebApp\\UserApi\\UserApi.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\dick\\cast\\TargetSample\\WebApp\\UserApi\\obj\\",
+        "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\WebApp\\UserApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -283,11 +283,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "G:\\dick\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj": {
-                "projectPath": "G:\\dick\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj"
+              "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj": {
+                "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\UserApplication\\UserApplication.csproj"
               },
-              "G:\\dick\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj": {
-                "projectPath": "G:\\dick\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj"
+              "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj": {
+                "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Infrastructure\\Repository\\UserAppContext\\UserAppContext.csproj"
               }
             }
           }
@@ -304,6 +304,18 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[8.1.1, )"
+            },
+            "DotNetCore.CAP": {
+              "target": "Package",
+              "version": "[2.5.1, )"
+            },
+            "DotNetCore.CAP.RabbitMQ": {
+              "target": "Package",
+              "version": "[2.5.1, )"
+            },
+            "DotNetCore.CAP.SqlServer": {
+              "target": "Package",
+              "version": "[2.5.1, )"
             },
             "MediatR": {
               "target": "Package",

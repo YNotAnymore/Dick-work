@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {}
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {}
   },
   "projects": {
-    "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
+        "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
         "projectName": "DomainCore",
-        "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
+        "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\obj\\",
+        "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\dick\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj": {}
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj": {}
   },
   "projects": {
-    "G:\\dick\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj": {
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj",
+        "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj",
         "projectName": "OrderApplication",
-        "projectPath": "G:\\dick\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj",
+        "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\OrderApplication.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\dick\\cast\\TargetSample\\Application\\OrderApplication\\obj\\",
+        "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Application\\OrderApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -32,8 +32,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "G:\\dick\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj": {
-                "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj"
+              "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj": {
+                "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj"
               }
             }
           }
@@ -70,14 +70,14 @@
         }
       }
     },
-    "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
+        "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
         "projectName": "DomainCore",
-        "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
+        "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\obj\\",
+        "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -124,14 +124,14 @@
         }
       }
     },
-    "G:\\dick\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj": {
+    "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\dick\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj",
+        "projectUniqueName": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj",
         "projectName": "OrderDomain",
-        "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj",
+        "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\OrderDomain.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\dick\\cast\\TargetSample\\Domain\\OrderDomain\\obj\\",
+        "outputPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\OrderDomain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -152,8 +152,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
-                "projectPath": "G:\\dick\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj"
+              "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj": {
+                "projectPath": "G:\\dick\\git\\Dick-work\\cast\\TargetSample\\Domain\\DomainCore\\DomainCore.csproj"
               }
             }
           }

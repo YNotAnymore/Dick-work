@@ -14,8 +14,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OrderAppContext;
+using OrderApplication.Dto;
 using OrderApplication.Service;
 using OrderDomain;
+using OrderDomain.Model;
 
 namespace OrderApi
 {
@@ -38,6 +40,9 @@ namespace OrderApi
             //AutoMapper
             var mappingConfig = new MapperConfiguration(mc =>
             {
+                mc.CreateMap<OrderDto, Order>();
+
+                mc.CreateMap<Order, OrderDto>();
 
             });
 
@@ -46,8 +51,7 @@ namespace OrderApi
 
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
-            services.AddMediatR(typeof(OrderService).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly, typeof(OrderService).GetTypeInfo().Assembly);
 
             services.AddHttpClient();
 

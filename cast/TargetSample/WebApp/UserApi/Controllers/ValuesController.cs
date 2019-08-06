@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DotNetCore.CAP;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace UserApi.Controllers
 {
@@ -10,11 +12,18 @@ namespace UserApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private ILogger<ValuesController> _logger;
+
+        public ValuesController(ILogger<ValuesController> logger)
+        {
+            _logger = logger;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] {"value1", "value2"};
         }
 
         // GET api/values/5
@@ -40,6 +49,12 @@ namespace UserApi.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        [NonAction, CapSubscribe("user.service.show.msg")]
+        public void DealMsg(string msg)
+        {
+            _logger.LogInformation($"user api receiver msg :{msg}");
         }
     }
 }

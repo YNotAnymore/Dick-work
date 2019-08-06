@@ -15,7 +15,7 @@ namespace OrderAppContext.EntityConfiguration
         public void Configure(EntityTypeBuilder<Order> builder)
         {
 
-            var datetime2Converter = new ValueConverter<DateTime, DateTimeOffset>(x => x, x => x.LocalDateTime);
+            //var datetime2Converter = new ValueConverter<DateTime, DateTimeOffset>(x => x, x => x.LocalDateTime);
 
             builder.ToTable(nameof(Order));
 
@@ -23,7 +23,8 @@ namespace OrderAppContext.EntityConfiguration
 
             builder.Property(p => p.ActualAmount).HasColumnName(nameof(Order.ActualAmount));
             builder.Property(p => p.Amount).HasColumnName(nameof(Order.Amount));
-            builder.Property(p => p.CreateTime).HasColumnName(nameof(Order.CreateTime)).HasConversion(datetime2Converter);
+            builder.Property(p => p.CreateTime).HasColumnName(nameof(Order.CreateTime));
+                //.HasConversion(datetime2Converter);
             builder.Property(p => p.Intro).HasColumnName(nameof(Order.Intro));
             builder.Property(p => p.UserId).HasColumnName(nameof(Order.UserId));
 
