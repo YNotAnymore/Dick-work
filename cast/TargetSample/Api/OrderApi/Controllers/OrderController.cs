@@ -77,7 +77,7 @@ namespace OrderApi.Controllers
                 var fallBackPolicy =
                     Policy<Task<string>>
                         .Handle<Exception>()
-                        .Fallback(Task<string>.Run(() => "执行失败，返回Fallback"));
+                        .Fallback(Task.Run(() => "执行失败，返回Fallback"));
 
                 var wrapPolicy = Policy.Wrap(fallBackPolicy, retryPolicy);
 
