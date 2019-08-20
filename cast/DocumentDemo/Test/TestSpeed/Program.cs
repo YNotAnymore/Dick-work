@@ -11,6 +11,17 @@ namespace TestSpeed
     {
         static void Main(string[] args)
         {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
+
+            dynamic txt = null;
+
+            if (txt != null & txt != 0)
+            {
+                Console.WriteLine(txt);
+            }
+
+            Console.ReadKey(true);
+
             List<dynamic> list = new List<dynamic>();
 
             var dataCount = 100;

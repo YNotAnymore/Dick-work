@@ -14,6 +14,23 @@ namespace LeetCode.Question.Hard
     {
         #region Solution
 
+        /*
+         * 
+         * basic test :
+         * 
+         * Runtime: 80 ms, faster than 84.95% of C# online submissions for Parsing A Boolean Expression.
+         * Memory Usage: 21.3 MB, less than 100.00% of C# online submissions for Parsing A Boolean Expression.
+         * 
+         * optmize : 
+         * 
+         * Runtime: 72 ms, faster than 100.00% of C# online submissions for Parsing A Boolean Expression.
+         * Memory Usage: 21.1 MB, less than 100.00% of C# online submissions for Parsing A Boolean Expression.
+         * 
+         * Runtime: 68 ms, faster than 100.00% of C# online submissions for Parsing A Boolean Expression.
+         * Memory Usage: 21.2 MB, less than 100.00% of C# online submissions for Parsing A Boolean Expression.
+         * 
+         */
+
         public bool Solution(string expression)
         {
             for (int i = 0; i < expression.Length; i++)
@@ -38,29 +55,32 @@ namespace LeetCode.Question.Hard
 
         public bool HelperNot(ref int start, string expression)
         {
+            var left = 0;
+            var res = true;
             for (start++; start < expression.Length; start++)
             {
-                if (expression[start] == '!')
-                    return !HelperNot(ref start, expression);
 
-                if (expression[start] == '&')
-                    return !HelperAnd(ref start, expression);
-
-                if (expression[start] == '|')
-                    return !HelperOr(ref start, expression);
-
-                if (expression[start] == 't')
+                if (expression[start] == '(') left++;
+                else if (expression[start] == ')')
                 {
-                    while (++start < expression.Length && expression[start] != ')') continue;
-                    return false;
+                    left--;
+                    if (left == 0) return res;
                 }
+                else if (expression[start] == '!')
+                    res =!HelperNot(ref start, expression);
 
-                if (expression[start] == 'f')
-                {
-                    while (++start < expression.Length && expression[start] != ')') continue;
-                    return true;
-                }
-            }
+                else if (expression[start] == '&')
+                    res = !HelperAnd(ref start, expression);
+
+                else if (expression[start] == '|')
+                    res = !HelperOr(ref start, expression);
+
+                else if (expression[start] == 't')
+                    res = false;
+
+                else if (expression[start] == 'f')
+                    res = true;
+            }      
 
             return true;
         }
@@ -68,9 +88,19 @@ namespace LeetCode.Question.Hard
         public bool HelperAnd(ref int start, string expression)
         {
             var res = true;
+            var left = 0;
             for (start++; start < expression.Length; start++)
             {
-                if (expression[start] == '!')
+
+                if (expression[start] == '(')
+                    left++;
+                else if (expression[start] == ')')
+                {
+                    left--;
+                    if (left == 0) return res;
+                }
+                else if (!res) continue;// optimize 已确定结果时 无需验证其他情况
+                else if (expression[start] == '!')
                     res &= HelperNot(ref start, expression);
 
                 else if (expression[start] == '&')
@@ -81,24 +111,26 @@ namespace LeetCode.Question.Hard
 
                 else if (expression[start] == 'f')
                     res = false;
-
-                if (!res)
-                {
-                    // ReSharper disable once RedundantJumpStatement
-                    while (++start < expression.Length && expression[start] != ')') continue;
-                    return false;
-                }
             }
 
-            return true;
+            return res;
         }
 
         public bool HelperOr(ref int start, string expression)
         {
             var res = false;
+            var left = 0;
             for (start++; start < expression.Length; start++)
             {
-                if (expression[start] == '!')
+                if (expression[start] == '(')
+                    left++;
+                else if (expression[start] == ')')
+                {
+                    left--;
+                    if (left == 0) return res;
+                }
+                else if (res) continue;// optimize 已确定结果时 无需验证其他情况
+                else if (expression[start] == '!')
                     res |= HelperNot(ref start, expression);
 
                 else if (expression[start] == '&')
@@ -109,15 +141,9 @@ namespace LeetCode.Question.Hard
 
                 else if (expression[start] == 't')
                     res = true;
-
-                if (res)
-                {
-                    while (++start < expression.Length && expression[start] != ')') continue;
-                    return true;
-                }
             }
 
-            return false;
+            return res;
         }
 
         #endregion
