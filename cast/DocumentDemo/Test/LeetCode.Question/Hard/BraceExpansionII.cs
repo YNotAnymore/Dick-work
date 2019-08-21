@@ -17,37 +17,62 @@ namespace LeetCode.Question.Hard
 
         public IList<string> Solution(string expression)
         {
-            ISet<string> res = new HashSet<string>();
-            string str = string.Empty;
+            var i = -1;
+            return Helper2(expression, ref i).ToList();
+        }
+
+        public ISet<string> Helper2(string expression, ref int i)
+        {
             bool andFlag = false;
-            for (int i = 0; i < expression.Length; i++)
+            ISet<string> list = new HashSet<string>();
+            string str = string.Empty;
+
+            for (i++; i < expression.Length; i++)
             {
+                if (expression[i] == '}')
+                {
+                    if (str != string.Empty)
+                        list.Add(str);
+                    break;
+                }
+
                 if (expression[i] >= 'a' && expression[i] <= 'z')
                 {
                     str += expression[i];
                     continue;
                 }
 
-                if (str != string.Empty)
+                if (expression[i] == ',')
                 {
-                    res.Add(str);
-                    str = string.Empty;
-                    andFlag = false;
+                    if (str != string.Empty)
+                    {
+                        list.Add(str);
+                        str = string.Empty;
+                    }
+
+                    andFlag = true;
+                    continue;
                 }
 
                 if (expression[i] == '{')
                 {
-                    res = Combination(res, Helper(expression, ref i), andFlag);
-                }
-                else if (expression[i] == ',')
-                {
-                    andFlag = true;
+                    if (str != string.Empty)
+                    {
+                        list = Combination(list,
+                            Combination(new HashSet<string>() {str}, Helper2(expression, ref i), false), andFlag);
+                        str = string.Empty;
+                    }
+                    else
+                    {
+                        list = Combination(list, Helper2(expression, ref i), andFlag);
+                    }
                 }
             }
 
-            return res.ToList();
+            return list;
         }
 
+        // bug
         public ISet<string> Helper(string expression, ref int i)
         {
             ISet<string> list = new HashSet<string>();
@@ -98,7 +123,7 @@ namespace LeetCode.Question.Hard
 
         public ISet<string> Combination(ISet<string> old, ISet<string> next, bool andFlag)
         {
-            if (old.Count == 0) return next;
+            if (old == null || old.Count == 0) return next;
             ISet<string> list;
             if (andFlag)
             {

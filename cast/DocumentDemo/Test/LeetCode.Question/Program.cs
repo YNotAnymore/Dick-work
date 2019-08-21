@@ -1,6 +1,7 @@
 ﻿using LeetCode.Question.Hard;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using Newtonsoft.Json;
 
 namespace LeetCode.Question
@@ -9,9 +10,13 @@ namespace LeetCode.Question
     {
         static void Main(string[] args)
         {
+            var rand = new Random();
+
             BraceExpansionII instance = new BraceExpansionII();
 
-            var res = instance.Solution("{a,b}{c,{d,e}}");
+            IList<string> res;
+
+            res = instance.Solution("{a,b}{c,{d,e}}");
 
             Console.WriteLine(JsonConvert.SerializeObject(res));
 
