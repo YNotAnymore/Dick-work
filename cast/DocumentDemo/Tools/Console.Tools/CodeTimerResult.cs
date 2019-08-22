@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
-namespace TestSpeed.Tools
+namespace Consoles.Tools
 {
     [DebuggerDisplay(
         "[Time Elapsed] {TimeElapsed} [CPU Cycles] {CPUCycles} [Gen 0] {Generation0} [Gen 1] {Generation1} [Gen 2] {Generation2}")]

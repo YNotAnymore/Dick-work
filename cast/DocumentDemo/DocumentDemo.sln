@@ -11,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{A9DBBE67-6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSpeed", "Test\TestSpeed\TestSpeed.csproj", "{E50B0A8D-526C-4CF3-B25E-960AF3355FA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.Question", "Test\LeetCode.Question\LeetCode.Question.csproj", "{81FC5528-03A9-48F8-9A77-5D8990453897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.Question", "Test\LeetCode.Question\LeetCode.Question.csproj", "{81FC5528-03A9-48F8-9A77-5D8990453897}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{B562F0FC-32C6-44C9-8133-83A6CE54C992}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.Tools", "Tools\Console.Tools\Console.Tools.csproj", "{F827E185-C53E-4656-A673-D92C73A4AB40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consoles.Tools", "Tools\Console.Tools\Consoles.Tools.csproj", "{F827E185-C53E-4656-A673-D92C73A4AB40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

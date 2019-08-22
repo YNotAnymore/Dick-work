@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 
-namespace TestSpeed.Tools
+namespace Consoles.Tools
 {
     /// <summary>
     /// ref from http://www.cnblogs.com/jeffreyzhao/archive/2009/03/10/codetimer.html
