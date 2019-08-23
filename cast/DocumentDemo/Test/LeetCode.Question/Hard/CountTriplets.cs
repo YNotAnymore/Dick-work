@@ -10,6 +10,7 @@ namespace LeetCode.Question.Hard
     /// @source : https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/
     /// @des : 
     /// </summary>
+    [Obsolete]
     public class CountTriplets
     {
         public int Solution(int[] arr)

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25bfca5c-d49d-4b11-bc99-42b31331e515" name="Default Changelist" comment="" />
@@ -23,23 +23,32 @@
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/ParseBoolExpr.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/MyCalendarThree.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/BraceExpansionII.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/Console.Tools/ShowList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/SwimInWater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4156DEFD-3D50-4A5F-A099-C2B49343A450/f2/f44bfe54/Guid.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Menu/LevelEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Console.Tools/CodeTimerResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/CusAttr/LevelAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4156DEFD-3D50-4A5F-A099-C2B49343A450/5a/bafe92c8/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Console.Tools/CodeTimer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Concurrency/PrintInOrder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Autofac/AutoFacDemo/Info.cs" />
-        <option value="$PROJECT_DIR$/Test/LeetCode.Question/Hard/CountTriplets.cs" />
         <option value="$PROJECT_DIR$/Tools/Console.Tools/CodeTimerResult.cs" />
         <option value="$PROJECT_DIR$/Tools/Console.Tools/CodeTimer.cs" />
-        <option value="$PROJECT_DIR$/Test/LeetCode.Question/Program.cs" />
-        <option value="$PROJECT_DIR$/Tools/Console.Tools/ShowResult.cs" />
         <option value="$PROJECT_DIR$/Test/LeetCode.Question/Hard/BraceExpansionII.cs" />
+        <option value="$PROJECT_DIR$/Test/LeetCode.Question/CusAttr/LevelAttribute.cs" />
+        <option value="$PROJECT_DIR$/Test/LeetCode.Question/Concurrency/PrintInOrder.cs" />
+        <option value="$PROJECT_DIR$/Test/LeetCode.Question/Hard/CountTriplets.cs" />
+        <option value="$PROJECT_DIR$/Tools/Console.Tools/ShowResult.cs" />
+        <option value="$PROJECT_DIR$/Tools/Console.Tools/ShowList.cs" />
+        <option value="$PROJECT_DIR$/Test/LeetCode.Question/Program.cs" />
+        <option value="$PROJECT_DIR$/Test/LeetCode.Question/Hard/SwimInWater.cs" />
       </list>
     </option>
   </component>
@@ -56,7 +65,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -101,20 +110,23 @@
       <option name="presentableId" value="Default" />
       <updated>1566441014564</updated>
       <workItem from="1566441023318" duration="11335000" />
+      <workItem from="1566529109355" duration="12279000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -138,6 +150,8 @@
     <state width="1557" height="222" key="GridCell.Tab.0.left/1600.900" />
     <state width="1557" height="222" key="GridCell.Tab.0.right" />
     <state width="1557" height="222" key="GridCell.Tab.0.right/1600.900" />
+    <state x="481" y="100" key="RiderGenerateDialog" />
+    <state x="481" y="100" key="RiderGenerateDialog/1600.900" />
     <state x="285" y="72" key="SettingsEditor" />
     <state x="285" y="72" key="SettingsEditor/1600.900" />
     <state x="480" y="185" key="WebReferenceSession.Dialog" />

@@ -1,6 +1,8 @@
 ﻿using LeetCode.Question.Hard;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using Consoles.Tools;
 using Newtonsoft.Json;
@@ -13,17 +15,66 @@ namespace LeetCode.Question
         {
             var rand = new Random();
 
-            TestBraceExpansionII();
-
-            CountTriplets instance = new CountTriplets();
-
-            System.Console.WriteLine();
-
-            Console.WriteLine(instance.Solution(new[] { 2, 1, 3 }));
+            CodeTimer codeTimer = new CodeTimer();
 
             Console.WriteLine("Hello World!");
 
             Console.ReadKey(true);
+        }
+
+        private static void TestSwimInWater(CodeTimer codeTimer, Random rand)
+        {
+            SwimInWater instance = new SwimInWater();
+
+            instance.Solution2(
+                JsonConvert.DeserializeObject<int[][]>(
+                    "[[0,1,2,3,4],[24,23,22,21,5],[12,13,14,15,16],[11,17,18,19,20],[10,9,8,7,6]]"),
+                true); //16
+
+            instance.Solution2(
+                JsonConvert.DeserializeObject<int[][]>(
+                    "[[7,34,16,12,15,0],[10,26,4,30,1,20],[28,27,33,35,3,8],[29,9,13,14,11,32],[31,21,23,24,19,18],[22,6,17,5,2,25]]"),
+                true); //26
+
+            instance.Solution(JsonConvert.DeserializeObject<int[][]>(
+                "[[52,19,24,3,45,21,56,27,5],[48,35,53,12,11,75,65,61,59],[58,9,76,28,4,80,72,34,78],[63,79,33,16,64,51,13,67,23],[31,57,54,60,74,8,6,38,44],[7,77,36,37,10,2,42,68,46],[32,25,17,26,15,14,29,70,39],[50,40,49,71,0,22,55,41,73],[69,66,1,47,20,43,30,62,18]]"));
+
+            Console.ReadKey(true);
+
+            int testCount = 10, martixLen = 20;
+
+            codeTimer.Time(1, () => { instance.Solution(null); });
+            for (int i = 0; i < testCount; i++)
+            {
+                var len = rand.Next(martixLen) + 2;
+
+                var arr = new int[len][];
+
+                var source = Enumerable.Range(0, len * len).ToList();
+
+                for (int j = 0; j < len; j++)
+                {
+                    arr[j] = new int[len];
+                    for (int k = 0; k < len; k++)
+                    {
+                        var randIndex = rand.Next(source.Count);
+                        arr[j][k] = source[randIndex];
+                        source.RemoveAt(randIndex);
+                    }
+                }
+
+                int res = 0;
+
+                var codeTimerResult = codeTimer.Time(1, () => { res = instance.Solution(arr); });
+
+                ShowResult.ShowMulti(new Dictionary<string, object>()
+                {
+                    //{nameof(arr),ShowList.GetStr(arr)},
+                    {nameof(arr), arr},
+                    {nameof(res), res},
+                    {nameof(codeTimerResult), codeTimerResult}
+                });
+            }
         }
 
         private static void TestBraceExpansionII()
@@ -44,7 +95,7 @@ namespace LeetCode.Question
 
             res = instance.Solution("{{a,{x,ia,o},w},er,a{x,ia,o}w}");
 
-            ShowResult.Show(res);//["a","aiaw","aow","axw","er","ia","o","w","x"]
+            ShowResult.Show(res); //["a","aiaw","aow","axw","er","ia","o","w","x"]
 
             // next
             res = instance.Solution("{a,{a,{x,ia,o},w}er{n,{g,{u,o}},{a,{x,ia,o},w}},er}");
@@ -54,19 +105,19 @@ namespace LeetCode.Question
 
             res = instance.Solution("{a{x,ia,o}w,{n,{g,{u,o}},{a,{x,ia,o},w}},er}");
 
-            ShowResult.Show(res);//["a","aiaw","aow","axw","er","g","ia","n","o","u","w","x"]
+            ShowResult.Show(res); //["a","aiaw","aow","axw","er","g","ia","n","o","u","w","x"]
 
             res = instance.Solution("{a,b}c{d,e}f");
 
-            ShowResult.Show(res);//["acdf","acef","bcdf","bcef"]
+            ShowResult.Show(res); //["acdf","acef","bcdf","bcef"]
 
             res = instance.Solution("{a,b}{c,{d,e}}");
 
-            ShowResult.Show(res);//["ac","ad","ae","bc","bd","be"]
+            ShowResult.Show(res); //["ac","ad","ae","bc","bd","be"]
 
             res = instance.Solution("{{a,z},a{b,c},{ab,z}}");
 
-            ShowResult.Show(res);//["a","ab","ac","z"]
+            ShowResult.Show(res); //["a","ab","ac","z"]
         }
 
         private static void TestLongestDecomposition()
@@ -95,7 +146,7 @@ namespace LeetCode.Question
 
         private static void TestMyCalendarThree()
         {
-            List<int> list = new List<int>() { 1, 2, 3 };
+            List<int> list = new List<int>() {1, 2, 3};
             list.Insert(0, 4);
 
             MyCalendarThree instance = new MyCalendarThree();
