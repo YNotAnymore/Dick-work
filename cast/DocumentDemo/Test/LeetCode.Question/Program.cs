@@ -36,14 +36,14 @@ namespace LeetCode.Question
                     "[[7,34,16,12,15,0],[10,26,4,30,1,20],[28,27,33,35,3,8],[29,9,13,14,11,32],[31,21,23,24,19,18],[22,6,17,5,2,25]]"),
                 true); //26
 
-            instance.Solution(JsonConvert.DeserializeObject<int[][]>(
+            instance.Solution2(JsonConvert.DeserializeObject<int[][]>(
                 "[[52,19,24,3,45,21,56,27,5],[48,35,53,12,11,75,65,61,59],[58,9,76,28,4,80,72,34,78],[63,79,33,16,64,51,13,67,23],[31,57,54,60,74,8,6,38,44],[7,77,36,37,10,2,42,68,46],[32,25,17,26,15,14,29,70,39],[50,40,49,71,0,22,55,41,73],[69,66,1,47,20,43,30,62,18]]"));
 
             Console.ReadKey(true);
 
             int testCount = 10, martixLen = 20;
 
-            codeTimer.Time(1, () => { instance.Solution(null); });
+            codeTimer.Time(1, () => { instance.Solution2(null); });
             for (int i = 0; i < testCount; i++)
             {
                 var len = rand.Next(martixLen) + 2;

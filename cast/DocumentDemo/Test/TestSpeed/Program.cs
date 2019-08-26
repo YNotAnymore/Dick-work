@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TestSpeed.Model;
@@ -11,6 +12,8 @@ namespace TestSpeed
     {
         static void Main(string[] args)
         {
+            TestLinqJoin();
+
             Dictionary<string, int> dictionary = new Dictionary<string, int>();
 
             dynamic txt = null;
@@ -70,5 +73,20 @@ namespace TestSpeed
             Console.ReadKey(true);
         }
 
+        private static void TestLinqJoin()
+        {
+            var list = Enumerable.Range(0, 10);
+
+            var newList = Enumerable.Range(5, 20);
+
+            var res = from a in list
+                join i in newList on a equals i into temp
+                from tt in temp.DefaultIfEmpty()
+                select new {a, tt};
+
+            Console.WriteLine(JsonConvert.SerializeObject(res));
+
+            Console.ReadKey(true);
+        }
     }
 }

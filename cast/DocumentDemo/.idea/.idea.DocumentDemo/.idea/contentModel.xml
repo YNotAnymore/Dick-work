@@ -21,6 +21,20 @@
       </e>
       <e p="DocumentDemo.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="Study" t="Include">
+        <e p="OdataStudy" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netcoreapp2.2" t="Include">
+                <e p="OdataStudy.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="OdataStudy.csproj" t="IncludeRecursive" />
+          <e p="Program.cs" t="Include" />
+        </e>
+      </e>
       <e p="Test" t="Include">
         <e p="LeetCode.Question" t="IncludeRecursive">
           <e p="bin" t="ExcludeRecursive" />
