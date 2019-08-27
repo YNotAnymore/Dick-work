@@ -60,9 +60,10 @@ navigation Simple.OData.Client.Session.FromSettings
 
 #### use ####
 
-> await client.For<Supplier>().OrderBy(s => s.SupplierNo).FindEntriesAsync();
-
-	await client.For<Supplier>().OrderBy(s => s.SupplierNo).FindEntriesAsync();
+	await client
+		.For<Supplier>()
+		.OrderBy(s => s.SupplierNo)
+		.FindEntriesAsync();
 
 
 navigation Simple.OData.Client.ODataClient.For
@@ -70,16 +71,25 @@ navigation Simple.OData.Client.ODataClient.For
 	/// <summary>
     /// Returns an instance of a fluent OData client for the specified collection.
     /// </summary>
-    /// <typeparam name="T">The entity type.</typeparam>
     /// <param name="collectionName">Name of the collection.</param>
     /// <returns>The fluent OData client instance.</returns>
-    public IBoundClient<T> For<T>(string collectionName = null) where T : class
+    public IBoundClient<IDictionary<string, object>> For(
+      string collectionName)
     {
-      return new BoundClient<T>(this, this._session, (FluentCommand) null, (FluentCommand) null, false).For(collectionName);
+      return this.GetBoundClient().For(collectionName);
     }
 
 
 ----------
+
+### GetBoundClient ###
+
+    private BoundClient<IDictionary<string, object>> GetBoundClient()
+    {
+      return new BoundClient<IDictionary<string, object>>(this, this._session, (FluentCommand) null, (FluentCommand) null, false);
+    }
+
+查看构造
 
 	internal BoundClient(
       ODataClient client,
@@ -91,8 +101,7 @@ navigation Simple.OData.Client.ODataClient.For
     {
     }
 
-
-----------
+查看相应的base构造
 
 	internal FluentClientBase(
       ODataClient client,
@@ -108,95 +117,136 @@ navigation Simple.OData.Client.ODataClient.For
       this._dynamicResults = dynamicResults;
     }
 
-通过OataClient构造BoundClient，通过构造初始化父类(FluentClientBase)的字段
+故**GetBoundClient**即只是重新构建一个**BoundClient**对象并返回
 
-to Simple.OData.Client.BoundClient.OrderBy
+构造时仅对属性赋值
 
-	public IBoundClient<T> OrderBy(IEnumerable<KeyValuePair<string, bool>> columns)
+----------
+
+to Simple.OData.Client.BoundClient.For
+
+    public IBoundClient<T> For(string collectionName = null)
     {
-      this.Command.OrderBy(columns);
+      this.Command.For(collectionName ?? this.Command.TypeCache.GetMappedName(typeof (T)));
       return (IBoundClient<T>) this;
     }
 
+查看属性Command的定义
 
-----------
+    internal FluentCommand Command
+    {
+      get
+      {
+        if (this._command != null)
+          return this._command;
+        lock (this)
+          return this._command ?? (this._command = this.CreateCommand());
+      }
+    }
 
-	public FluentCommand OrderBy(IEnumerable<KeyValuePair<string, bool>> columns)
+通过对**GetBoundClient**的分析可知**_command**默认为null
+
+查看**CreateCommand**定义：
+
+    protected FluentCommand CreateCommand()
+    {
+      return new FluentCommand(this.Session, this._parentCommand, this._client.BatchEntries);
+    }
+
+	internal FluentCommand(
+      Session session,
+      FluentCommand parent,
+      ConcurrentDictionary<object, IDictionary<string, object>> batchEntries)
+    {
+      this._details = new CommandDetails(session, parent, batchEntries);
+    }
+
+	public CommandDetails(
+      Session session,
+      FluentCommand parent,
+      ConcurrentDictionary<object, IDictionary<string, object>> batchEntries)
+    {
+      this.Session = session;
+      this.Parent = parent;
+      this.SkipCount = -1L;
+      this.TopCount = -1L;
+      this.ExpandAssociations = new List<KeyValuePair<string, ODataExpandOptions>>();
+      this.SelectColumns = new List<string>();
+      this.OrderbyColumns = new List<KeyValuePair<string, bool>>();
+      this.MediaProperties = (IEnumerable<string>) new List<string>();
+      this.BatchEntries = batchEntries;
+    }
+
+简单的属性赋值，了解。
+
+deep Simple.OData.Client.FluentCommand.For
+
+    public FluentCommand For(string collectionName)
     {
       if (this.IsBatchResponse)
         return this;
-      this._details.OrderbyColumns.AddRange(this.SplitItems(columns));
+      string[] strArray = collectionName.Split('/');
+      if (((IEnumerable<string>) strArray).Count<string>() > 1)
+      {
+        this._details.CollectionName = strArray[0];
+        this._details.DerivedCollectionName = strArray[1];
+      }
+      else
+        this._details.CollectionName = collectionName;
       return this;
     }
 
-通过list字段保存相应的条件、排序等
+**For方法**：构建了一个**BoundClient**，然后通过这个对象构建一个**FluentCommand**，再在**FluentCommand**中构建了一个**CommandDetails**
 
-to Simple.OData.Client.BoundClient.FindEntriesAsync
-
-	public Task<IEnumerable<T>> FindEntriesAsync()
-    {
-      return this.FindEntriesAsync(CancellationToken.None);
-    }
-
+最终给**CommandDetails**的属性进行赋值
 
 ----------
 
-	public Task<IEnumerable<T>> FindEntriesAsync(CancellationToken cancellationToken)
+- OrderBy
+
+	类似于For，除了构建部分，因为For已经基本上构建了所有基本对象
+
+### FindEntriesAsync ###
+
+to Simple.OData.Client.BoundClient.FindEntryAsync
+
+	public Task<T> FindEntryAsync()
     {
-      return this.RectifyColumnSelectionAsync(
-        this._client.FindEntriesAsync(this._command, cancellationToken),
-        this._command.SelectedColumns, 
-        this._command.DynamicPropertiesContainerName
-        );
+      return this.FindEntryAsync(CancellationToken.None);
     }
 
-to Simple.OData.Client.ODataClient.FindEntriesAsync
+	public Task<T> FindEntryAsync(CancellationToken cancellationToken)
+    {
+      return this.FilterAndTypeColumnsAsync(
+      this._client.FindEntryAsync(this._command, cancellationToken),
+      this._command.SelectedColumns, this._command.DynamicPropertiesContainerName);
+    }
 
-	internal async Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(
+----------
+
+Simple.OData.Client.ODataClient.FindEntryAsync
+
+    internal async Task<IDictionary<string, object>> FindEntryAsync(
       FluentCommand command,
       CancellationToken cancellationToken)
     {
       if (this.IsBatchResponse)
-        return this._batchResponse.AsEntries();
-      IODataAdapter odataAdapter = await this._session.ResolveAdapterAsync(cancellationToken);
+        return this._batchResponse.AsEntry(false);
+      IODataAdapter odataAdapter = await this._session.ResolveAdapterAsync(cancellationToken).ConfigureAwait(false);
       if (cancellationToken.IsCancellationRequested)
         cancellationToken.ThrowIfCancellationRequested();
-      string commandText = await command.GetCommandTextAsync(cancellationToken);
+      string commandText = await command.GetCommandTextAsync(cancellationToken).ConfigureAwait(false);
       if (cancellationToken.IsCancellationRequested)
         cancellationToken.ThrowIfCancellationRequested();
-      return await this.FindEntriesAsync(commandText, cancellationToken);
+      IEnumerable<AnnotatedEntry> source = await this.FindAnnotatedEntriesAsync(commandText, false, (ODataFeedAnnotations) null, cancellationToken).ConfigureAwait(false);
+      if (cancellationToken.IsCancellationRequested)
+        cancellationToken.ThrowIfCancellationRequested();
+      AnnotatedEntry result = source != null ? source.FirstOrDefault<AnnotatedEntry>() : (AnnotatedEntry) null;
+      await this.EnrichWithMediaPropertiesAsync(result, command.Details.MediaProperties, cancellationToken).ConfigureAwait(false);
+      return result?.GetData(this._session.Settings.IncludeAnnotationsInResults);
     }
 
-to Simple.OData.Client.FluentCommand.GetCommandTextAsync
+----------
 
-	public async Task<string> GetCommandTextAsync(CancellationToken cancellationToken)
-    {
-      IODataAdapter odataAdapter = await this._details.Session.ResolveAdapterAsync(cancellationToken);
-      return new FluentCommand(this).Resolve().Format();
-    }
 
-to Simple.OData.Client.Session.ResolveAdapterAsync
-
-	public async Task<IODataAdapter> ResolveAdapterAsync(
-      CancellationToken cancellationToken)
-    {
-      if (!this.MetadataCache.IsResolved())
-      {
-        IODataAdapter adapter;
-        if (string.IsNullOrEmpty(this.Settings.MetadataDocument))
-        {
-          HttpResponseMessage response = await this.SendMetadataRequestAsync(cancellationToken);
-          this.MetadataCache.SetMetadataDocument(await this._adapterFactory.GetMetadataDocumentAsync(response));
-          adapter = await this._adapterFactory.CreateAdapterAsync(response);
-        }
-        else
-        {
-          this.MetadataCache.SetMetadataDocument(this.Settings.MetadataDocument);
-          adapter = this._adapterFactory.CreateAdapter(this.Settings.MetadataDocument);
-        }
-        this._createAdapter = (Func<IODataAdapter>) (() => adapter);
-      }
-      if (this.Settings.PayloadFormat == ODataPayloadFormat.Unspecified)
-        this.Settings.PayloadFormat = this.Adapter.DefaultPayloadFormat;
-      return this.Adapter;
-    }
+- 

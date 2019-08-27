@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consoles.Tools", "Tools\Con
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Study", "Study", "{CADD53F6-5A44-4536-B042-9BE6D2EB0B6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdataStudy", "Study\OdataStudy\OdataStudy.csproj", "{09332408-487F-4F6F-B5BE-DB75F6CFB8DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdataStudy", "Study\OdataStudy\OdataStudy.csproj", "{09332408-487F-4F6F-B5BE-DB75F6CFB8DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

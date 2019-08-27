@@ -50,6 +50,7 @@
             <e p="LongestDecomposition.cs" t="Include" />
             <e p="MyCalendarThree.cs" t="Include" />
             <e p="ParseBoolExpr.cs" t="Include" />
+            <e p="SmallestRange.cs" t="Include" />
             <e p="SwimInWater.cs" t="Include" />
           </e>
           <e p="LeetCode.Question.csproj" t="IncludeRecursive" />
