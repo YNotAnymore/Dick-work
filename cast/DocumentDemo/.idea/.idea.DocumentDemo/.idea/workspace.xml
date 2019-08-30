@@ -12,53 +12,56 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/5e/680871d7/Session.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/CountTriplets.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1335E7B9-EF14-4CDE-A402-60AD807C27DC/29/26d61d68/MySqlProviderServices.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/f9/48da16b3/CommandFormatterBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/4c/8c86cb62/EdmMetadataCache.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4156DEFD-3D50-4A5F-A099-C2B49343A450/17/bf0c8f24/StringBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/32/a814afca/IMetadata.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/7d/e0189170/IODataAdapterFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/ba/35ebda22/ISession.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autofac/AutoFacDemo/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/TestSpeed/Test/DistinctTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/TestSpeed/Model/TxtModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/f1/4924d1df/ODataClientSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/e1/4f5ce207/IODataAdapter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/dc/2da9a5f4/ODataAdapterFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2B9EE027-CD1A-4B8D-BBB6-6A0957018AEB/4b/41c5fe2e/ODataAdapter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/85/d7e5db3f/ITypeCache.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Study/OdataStudy/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/46/1a3ac1ee/MetadataCache.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/bd/c80222a9/CommandDetails.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/851AF452-15BC-4077-B7DC-98DC81062EFE/f2/28321b15/ODataAdapter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/SmallestRange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/851AF452-15BC-4077-B7DC-98DC81062EFE/d5/ea940ae6/Metadata.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/f2/4ca03940/AnnotatedEntry.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tools/Console.Tools/ShowResult.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/ed/b24f1870/IBoundClient`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/LongestDecomposition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Test/TestSpeed/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/ParseBoolExpr.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/MyCalendarThree.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/41/83c0ede0/RequestRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/BraceExpansionII.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tools/Console.Tools/ShowList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/9d/072460f9/ODataClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/SwimInWater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4156DEFD-3D50-4A5F-A099-C2B49343A450/f2/f44bfe54/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Menu/LevelEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/FrameTest/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Console.Tools/CodeTimerResult.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/3d/69e913d3/BoundClient`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/CusAttr/LevelAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4156DEFD-3D50-4A5F-A099-C2B49343A450/5a/bafe92c8/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tools/Console.Tools/CodeTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Concurrency/PrintInOrder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/56/a7155bc5/FluentClientBase`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/83/89d31b5c/FluentCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/89/1897dbc1/IFluentClient`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/5e/680871d7/Session.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/CountTriplets.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/4c/8c86cb62/EdmMetadataCache.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///C# Console" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/7d/e0189170/IODataAdapterFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Autofac/AutoFacDemo/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/f1/4924d1df/ODataClientSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/dc/2da9a5f4/ODataAdapterFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/85/d7e5db3f/ITypeCache.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Study/OdataStudy/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/bd/c80222a9/CommandDetails.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/SmallestRange.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/Console.Tools/ShowResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/TestSpeed/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tools/Console.Tools/ShowList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/SwimInWater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/56/a7155bc5/FluentClientBase`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/3d/1c9aaf2d/ICommandFormatter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -77,9 +80,11 @@
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/3d/69e913d3/BoundClient`1.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/851AF452-15BC-4077-B7DC-98DC81062EFE/f2/28321b15/ODataAdapter.cs" />
         <option value="$PROJECT_DIR$/Study/OdataStudy/Program.cs" />
-        <option value="$PROJECT_DIR$/Test/TestSpeed/Program.cs" />
         <option value="$PROJECT_DIR$/Test/LeetCode.Question/Hard/SmallestRange.cs" />
         <option value="$PROJECT_DIR$/Test/LeetCode.Question/Program.cs" />
+        <option value="$PROJECT_DIR$/Test/TestSpeed/LanghuaContent.cs" />
+        <option value="$PROJECT_DIR$/Test/TestSpeed/Program.cs" />
+        <option value="$PROJECT_DIR$/Test/FrameTest/Program.cs" />
       </list>
     </option>
   </component>
@@ -146,6 +151,7 @@
       <workItem from="1566812449238" duration="2103000" />
       <workItem from="1566878216501" duration="7278000" />
       <workItem from="1566896358315" duration="4231000" />
+      <workItem from="1567057308213" duration="3583000" />
     </task>
     <servers />
   </component>

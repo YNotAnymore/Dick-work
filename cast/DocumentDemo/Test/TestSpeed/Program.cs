@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace TestSpeed
     {
         static void Main(string[] args)
         {
+            
             TestLinqJoin();
 
             Dictionary<string, int> dictionary = new Dictionary<string, int>();

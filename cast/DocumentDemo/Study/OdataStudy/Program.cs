@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Simple.OData.Client;
+using Vlxm.LH.Data;
 
 namespace OdataStudy
 {
@@ -9,21 +10,25 @@ namespace OdataStudy
     {
         static void Main(string[] args)
         {
-            Test();
+            ODataClient client = new ODataClient(new ODataClientSettings()
+            {
+                BaseUri = new Uri("http://www.langhua.service/odata/"),
+                OnTrace = ((s, objects) => { Console.WriteLine(s, objects); }),
+            });
+
+            var res = client.For<Order>().Key(3).Filter(u => u.CreateTime < DateTime.Now).FindEntriesAsync().Result;
+
+            Test(client);
+
+            Console.WriteLine(JsonConvert.SerializeObject(res));
 
             Console.WriteLine("Hello World!");
 
             Console.ReadKey(true);
         }
 
-        public static async Task Test()
+        public static async Task Test(ODataClient client)
         {
-            ODataClient client = new ODataClient(new ODataClientSettings()
-            {
-                BaseUri = new Uri("http://localhost:250/odata/"),
-                OnTrace = ((s, objects) => { Console.WriteLine(s, objects); }),
-            });
-
             //var list = await client.For("Users")
             //    .Key(1)
             //    //.Filter(u => (int)u["UserID"] == 1)

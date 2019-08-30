@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Study", "Study", "{CADD53F6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdataStudy", "Study\OdataStudy\OdataStudy.csproj", "{09332408-487F-4F6F-B5BE-DB75F6CFB8DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameTest", "Test\FrameTest\FrameTest.csproj", "{4FA0C168-8544-4F4D-B06E-49A1B3EE9295}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{09332408-487F-4F6F-B5BE-DB75F6CFB8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09332408-487F-4F6F-B5BE-DB75F6CFB8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09332408-487F-4F6F-B5BE-DB75F6CFB8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA0C168-8544-4F4D-B06E-49A1B3EE9295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA0C168-8544-4F4D-B06E-49A1B3EE9295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA0C168-8544-4F4D-B06E-49A1B3EE9295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA0C168-8544-4F4D-B06E-49A1B3EE9295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{81FC5528-03A9-48F8-9A77-5D8990453897} = {A9DBBE67-622B-45FE-81C7-31FA0BE7FE6F}
 		{F827E185-C53E-4656-A673-D92C73A4AB40} = {B562F0FC-32C6-44C9-8133-83A6CE54C992}
 		{09332408-487F-4F6F-B5BE-DB75F6CFB8DD} = {CADD53F6-5A44-4536-B042-9BE6D2EB0B6C}
+		{4FA0C168-8544-4F4D-B06E-49A1B3EE9295} = {A9DBBE67-622B-45FE-81C7-31FA0BE7FE6F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A0AB001-54A1-4D28-9885-98A6FB8A339F}
