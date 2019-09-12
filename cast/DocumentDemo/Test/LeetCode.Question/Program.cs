@@ -17,6 +17,80 @@ namespace LeetCode.Question
 
             CodeTimer codeTimer = new CodeTimer();
 
+            MinDeletionSize instance = new MinDeletionSize();
+
+            Console.WriteLine(instance.Solution(new[]
+           {
+                "bbazb","dabca"
+            }));// 3
+
+            Console.WriteLine(instance.Solution(new[]
+            {
+                "dabca","bbazb"
+            }));// 3
+
+            Console.WriteLine(instance.Solution(new[]
+            {
+                "edcba"
+            }));// 4
+
+            Console.WriteLine(instance.Solution(new []
+            {
+                "ghi","def","abc"
+            })); // 0
+
+            Console.WriteLine(instance.Solution(new []
+            {
+                "aaaabaa"
+            })); // 1
+
+            Console.WriteLine(instance.Solution(new[]
+            {
+               "abcacba", "cbbcacb", "acabcbb", "aabaabc"
+            })); // 4
+
+            Console.ReadKey();
+            
+            int testCount = 100, strLen = 100, lowLen = 1,arrLen = 100, lowArrLen = 1;
+
+            for (int i = 0; i < testCount; i++)
+            {
+                var len = rand.Next(strLen) + lowLen;
+
+                var arr = new string[rand.Next(arrLen) + lowArrLen];
+
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    StringBuilder builder = new StringBuilder();
+
+                    for (int k = 0; k < len; k++)
+                    {
+                        builder.Append((char) (rand.Next(26) + 'a'));
+                    }
+
+                    arr[j] = builder.ToString();
+                }
+
+                int res = len;
+
+                var codeTimerResult = codeTimer.Time(1, (() => { res = instance.Solution(arr); }));
+                
+                ShowResult.ShowMulti(new Dictionary<string, object>()
+                {
+                    {nameof(res),res},
+                    {nameof(codeTimerResult),codeTimerResult},
+                    {nameof(arr),arr}
+                });
+                
+            }
+            
+            Console.WriteLine("Hello World!");
+
+            Console.ReadKey(true);
+        }
+
+        private static void TestSmallestRange(CodeTimer codeTimer)
+        {
             SmallestRange instance = new SmallestRange();
 
             var list = new List<IList<int>>()
@@ -49,7 +123,7 @@ namespace LeetCode.Question
                 {nameof(codeTimerResult), codeTimerResult},
                 {nameof(res), res}
             });
-            
+
             codeTimerResult = codeTimer.Time(1, (() => { res = instance.Simple(data); }));
 
             ShowResult.ShowMulti(new Dictionary<string, object>()
@@ -57,15 +131,7 @@ namespace LeetCode.Question
                 {nameof(codeTimerResult), codeTimerResult},
                 {nameof(res), res}
             });
-            
-            codeTimerResult = codeTimer.Time(1, (() => { res = instance.Solution(data); }));
 
-            ShowResult.ShowMulti(new Dictionary<string, object>()
-            {
-                {nameof(codeTimerResult), codeTimerResult},
-                {nameof(res), res}
-            });
-            
             codeTimerResult = codeTimer.Time(1, (() => { res = instance.Solution(data); }));
 
             ShowResult.ShowMulti(new Dictionary<string, object>()
@@ -74,9 +140,13 @@ namespace LeetCode.Question
                 {nameof(res), res}
             });
 
-            Console.WriteLine("Hello World!");
+            codeTimerResult = codeTimer.Time(1, (() => { res = instance.Solution(data); }));
 
-            Console.ReadKey(true);
+            ShowResult.ShowMulti(new Dictionary<string, object>()
+            {
+                {nameof(codeTimerResult), codeTimerResult},
+                {nameof(res), res}
+            });
         }
 
         private static void TestSwimInWater(CodeTimer codeTimer, Random rand)

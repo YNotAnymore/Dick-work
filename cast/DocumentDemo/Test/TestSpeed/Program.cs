@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TestSpeed.Model;
+using TestSpeed.RefData;
 using TestSpeed.Test;
 using TestSpeed.Tools;
 
@@ -11,9 +12,22 @@ namespace TestSpeed
 {
     class Program
     {
+
+        [MyAspect]
+        public static void Show(string str)
+        {
+            Console.WriteLine(str);
+        }
+
         static void Main(string[] args)
         {
-            
+
+            Show("first");
+
+            Show("123");
+
+            Console.ReadKey(true);
+
             TestLinqJoin();
 
             Dictionary<string, int> dictionary = new Dictionary<string, int>();

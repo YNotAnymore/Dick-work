@@ -24,6 +24,9 @@
       <e p="Study" t="Include">
         <e p="OdataStudy" t="IncludeRecursive">
           <e p="bin" t="ExcludeRecursive" />
+          <e p="Models" t="Include">
+            <e p="Order.cs" t="Include" />
+          </e>
           <e p="obj" t="ExcludeRecursive">
             <e p="Debug" t="Include">
               <e p="netcoreapp2.2" t="Include">
@@ -43,6 +46,9 @@
           <e p="FrameTest.csproj" t="IncludeRecursive" />
           <e p="LanghuaContent.cs" t="Include" />
           <e p="Migrations" t="Include">
+            <e p="201908290652200_Complete.cs" t="Include" />
+            <e p="201908290652200_Complete.Designer.cs" t="Include" />
+            <e p="201908290652200_Complete.resx" t="Include" />
             <e p="Configuration.cs" t="Include" />
           </e>
           <e p="obj" t="ExcludeRecursive" />
@@ -60,10 +66,14 @@
           <e p="CusAttr" t="Include">
             <e p="LevelAttribute.cs" t="Include" />
           </e>
+          <e p="CusHelper" t="Include">
+            <e p="CollectionHelper.cs" t="Include" />
+          </e>
           <e p="Hard" t="Include">
             <e p="BraceExpansionII.cs" t="Include" />
             <e p="CountTriplets.cs" t="Include" />
             <e p="LongestDecomposition.cs" t="Include" />
+            <e p="MinDeletionSize.cs" t="Include" />
             <e p="MyCalendarThree.cs" t="Include" />
             <e p="ParseBoolExpr.cs" t="Include" />
             <e p="SmallestRange.cs" t="Include" />
@@ -99,6 +109,9 @@
             </e>
           </e>
           <e p="Program.cs" t="Include" />
+          <e p="RefData" t="Include">
+            <e p="MyAspect.cs" t="Include" />
+          </e>
           <e p="Test" t="Include">
             <e p="DistinctTest.cs" t="Include" />
           </e>

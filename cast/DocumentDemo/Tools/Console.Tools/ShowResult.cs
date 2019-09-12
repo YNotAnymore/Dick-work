@@ -12,7 +12,7 @@ namespace Consoles.Tools
     /// </summary>
     public class ShowResult
     {
-        
+
         public static void ShowMulti(Dictionary<string, object> dictionary)
         {
             Console.WriteLine("\n-------------ShowMulti S---------------------");
@@ -22,10 +22,10 @@ namespace Consoles.Tools
                 Console.WriteLine($"{item.Key} : ");
                 Console.WriteLine(GetStr(item.Value));
             }
-            
+
             Console.WriteLine("-------------ShowMulti E---------------------\n");
         }
-        
+
         public static void ShowMulti<T>(Dictionary<string, T> dictionary)
         {
             Console.WriteLine("-------------ShowMulti S---------------------");
@@ -34,7 +34,7 @@ namespace Consoles.Tools
             {
                 Console.WriteLine($"{item.Key} : {GetStr(item.Value)}");
             }
-            
+
             Console.WriteLine("-------------ShowMulti E---------------------");
         }
 
@@ -56,12 +56,12 @@ namespace Consoles.Tools
                 return data.ToString();
             return JsonConvert.SerializeObject(data);
         }
-        
+
         public static string GetStr(object data)
         {
             if (data is string)
                 return (string)data;
-            if (data.GetType().IsValueType)
+            if (data.GetType().IsValueType )
                 return data.ToString();
             return JsonConvert.SerializeObject(data);
         }
