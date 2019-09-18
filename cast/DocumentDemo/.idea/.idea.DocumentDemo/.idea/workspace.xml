@@ -32,6 +32,7 @@
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/ParseBoolExpr.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/MyCalendarThree.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/41/83c0ede0/RequestRunner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Middle/MaxIncreaseKeepingSkyline.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Test/LeetCode.Question/Hard/BraceExpansionII.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833ED5D4-2068-4FE9-B493-BDF13FBEAA9A/9d/072460f9/ODataClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4156DEFD-3D50-4A5F-A099-C2B49343A450/f2/f44bfe54/Guid.cs" root0="SKIP_HIGHLIGHTING" />
@@ -90,8 +91,9 @@
         <option value="$PROJECT_DIR$/Test/TestSpeed/Program.cs" />
         <option value="$PROJECT_DIR$/Test/FrameTest/Program.cs" />
         <option value="$PROJECT_DIR$/Test/LeetCode.Question/CusHelper/CollectionHelper.cs" />
-        <option value="$PROJECT_DIR$/Test/LeetCode.Question/Program.cs" />
         <option value="$PROJECT_DIR$/Test/LeetCode.Question/Hard/MinDeletionSize.cs" />
+        <option value="$PROJECT_DIR$/Test/LeetCode.Question/Program.cs" />
+        <option value="$PROJECT_DIR$/Test/LeetCode.Question/Middle/MaxIncreaseKeepingSkyline.cs" />
       </list>
     </option>
   </component>
@@ -160,6 +162,8 @@
       <workItem from="1566896358315" duration="4231000" />
       <workItem from="1567057308213" duration="3583000" />
       <workItem from="1568255706030" duration="16976000" />
+      <workItem from="1568707814914" duration="2389000" />
+      <workItem from="1568771702511" duration="1840000" />
     </task>
     <servers />
   </component>

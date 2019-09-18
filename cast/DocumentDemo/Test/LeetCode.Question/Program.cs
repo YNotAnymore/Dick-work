@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Consoles.Tools;
+using LeetCode.Question.Middle;
 using Newtonsoft.Json;
 
 namespace LeetCode.Question
@@ -17,41 +18,53 @@ namespace LeetCode.Question
 
             CodeTimer codeTimer = new CodeTimer();
 
+            MaxIncreaseKeepingSkyline instance = new MaxIncreaseKeepingSkyline();
+
+            Console.WriteLine(instance.Solution(JsonConvert.DeserializeObject<int[][]>("[[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]")));// 35
+
+            Console.WriteLine("Hello World!");
+
+            Console.ReadKey(true);
+        }
+
+        [Obsolete]
+        private static void TestMinDeletionSize(Random rand, CodeTimer codeTimer)
+        {
             MinDeletionSize instance = new MinDeletionSize();
 
             Console.WriteLine(instance.Solution(new[]
-           {
-                "bbazb","dabca"
-            }));// 3
+            {
+                "bbazb", "dabca"
+            })); // 3
 
             Console.WriteLine(instance.Solution(new[]
             {
-                "dabca","bbazb"
-            }));// 3
+                "dabca", "bbazb"
+            })); // 3
 
             Console.WriteLine(instance.Solution(new[]
             {
                 "edcba"
-            }));// 4
+            })); // 4
 
-            Console.WriteLine(instance.Solution(new []
+            Console.WriteLine(instance.Solution(new[]
             {
-                "ghi","def","abc"
+                "ghi", "def", "abc"
             })); // 0
 
-            Console.WriteLine(instance.Solution(new []
+            Console.WriteLine(instance.Solution(new[]
             {
                 "aaaabaa"
             })); // 1
 
             Console.WriteLine(instance.Solution(new[]
             {
-               "abcacba", "cbbcacb", "acabcbb", "aabaabc"
+                "abcacba", "cbbcacb", "acabcbb", "aabaabc"
             })); // 4
 
             Console.ReadKey();
-            
-            int testCount = 100, strLen = 100, lowLen = 1,arrLen = 100, lowArrLen = 1;
+
+            int testCount = 100, strLen = 100, lowLen = 1, arrLen = 100, lowArrLen = 1;
 
             for (int i = 0; i < testCount; i++)
             {
@@ -74,19 +87,14 @@ namespace LeetCode.Question
                 int res = len;
 
                 var codeTimerResult = codeTimer.Time(1, (() => { res = instance.Solution(arr); }));
-                
+
                 ShowResult.ShowMulti(new Dictionary<string, object>()
                 {
-                    {nameof(res),res},
-                    {nameof(codeTimerResult),codeTimerResult},
-                    {nameof(arr),arr}
+                    {nameof(res), res},
+                    {nameof(codeTimerResult), codeTimerResult},
+                    {nameof(arr), arr}
                 });
-                
             }
-            
-            Console.WriteLine("Hello World!");
-
-            Console.ReadKey(true);
         }
 
         private static void TestSmallestRange(CodeTimer codeTimer)

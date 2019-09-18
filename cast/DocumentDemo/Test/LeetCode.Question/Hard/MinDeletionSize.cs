@@ -24,16 +24,16 @@ namespace LeetCode.Question.Hard
 
             for (int i = 0; i < A.Length; i++)
             {
-                var helper = Helper(A[i], flag);
-
-                for (int j = 0; j < len; j++)
-                {
-                    if (flag[j] == 1 && helper[j] == 0)
-                    {
-                        res++;
-                        flag[j] = 0;
-                    }
-                }
+//                var helper = Helper(A[i], flag);
+//
+//                for (int j = 0; j < len; j++)
+//                {
+//                    if (flag[j] == 1 && helper[j] == 0)
+//                    {
+//                        res++;
+//                        flag[j] = 0;
+//                    }
+//                }
             }
 
             return res;
@@ -43,41 +43,41 @@ namespace LeetCode.Question.Hard
         {
             int len = A[0].Length, res = len - 1, prev, itemRes;
 
-            bool[] flag = new bool[len];
-            var arr = new int[len];
-
-            for (int i = 0; i < len; i++)
-            {
-                if (flag[i]) continue;
-
-                arr = Helper(A[0]);
-
-                for (int j = 0; j < arr.Length; j++)
-                {
-                    if (arr[j] == 1) flag[j] = true;
-                }
-
-                for (int j = 1; j < A.Length; j++)
-                {
-                    var helper = Helper(A[j], arr);
-
-                    for (int k = 0; k < len; k++)
-                    {
-                        if (arr[k] == 1 && helper[k] == 0)
-                        {
-                            arr[k] = 0;
-                        }
-                    }
-                }
-
-                itemRes = 0;
-                for (int j = 0; j < arr.Length; j++)
-                {
-                    if (arr[j] == 0) itemRes++;
-                }
-
-                if (itemRes < res) res = itemRes;
-            }
+//            bool[] flag = new bool[len];
+//            var arr = new int[len];
+//
+//            for (int i = 0; i < len; i++)
+//            {
+//                if (flag[i]) continue;
+//
+//                arr = Helper(A[0]);
+//
+//                for (int j = 0; j < arr.Length; j++)
+//                {
+//                    if (arr[j] == 1) flag[j] = true;
+//                }
+//
+//                for (int j = 1; j < A.Length; j++)
+//                {
+//                    var helper = Helper(A[j], arr);
+//
+//                    for (int k = 0; k < len; k++)
+//                    {
+//                        if (arr[k] == 1 && helper[k] == 0)
+//                        {
+//                            arr[k] = 0;
+//                        }
+//                    }
+//                }
+//
+//                itemRes = 0;
+//                for (int j = 0; j < arr.Length; j++)
+//                {
+//                    if (arr[j] == 0) itemRes++;
+//                }
+//
+//                if (itemRes < res) res = itemRes;
+//            }
 
             return res;
         }
@@ -96,7 +96,7 @@ namespace LeetCode.Question.Hard
                 if (flag[i]) continue;
 
                 var maxLen = 2;
-                firstList = Helper2(A[0]);
+//                firstList = Helper2(A[0]);
 
                 foreach (var arr in firstList)
                 {
@@ -109,16 +109,16 @@ namespace LeetCode.Question.Hard
 
                     for (int j = 1; j < A.Length; j++)
                     {
-                        var helper = Helper(A[j], arr);
+//                        var helper = Helper(A[j], arr);
 
-                        for (int k = 0; k < len; k++)
-                        {
-                            if (arr[k] == 1 && helper[k] == 0)
-                            {
-                                arr[k] = 0;
-                                itemRes++;
-                            }
-                        }
+//                        for (int k = 0; k < len; k++)
+//                        {
+//                            if (arr[k] == 1 && helper[k] == 0)
+//                            {
+//                                arr[k] = 0;
+//                                itemRes++;
+//                            }
+//                        }
                     }
 
                     if (itemRes < res) res = itemRes;
