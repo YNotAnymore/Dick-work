@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Administrator\.Rider2019.2\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\Administrator\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Administrator\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Newbe.Mahua.Plugins.Parrot.-1611866951.00" t="ExcludeRecursive" />
+    <e p="G:\dick\git\Dick-work\cast\QQChat" t="IncludeFlat">
+      <e p="Newbe.Mahua.Plugins.Parrot" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="build.bat" t="Include" />
+        <e p="build.ps1" t="Include" />
+        <e p="buildTools" t="Include">
+          <e p="7z.exe" t="Include" />
+          <e p="nuget.exe" t="Include" />
+          <e p="packages.config" t="Include" />
+        </e>
+        <e p="Chat" t="Include">
+          <e p="XiaoBingRobot.cs" t="Include" />
+        </e>
+        <e p="Command" t="Include" />
+        <e p="CusInterface" t="Include" />
+        <e p="CusTools" t="Include">
+          <e p="CatchTools.cs" t="Include" />
+        </e>
+        <e p="Domain" t="Include">
+          <e p="Emjoy.cs" t="Include" />
+        </e>
+        <e p="MahuaApis" t="Include">
+          <e p="readme.md" t="Include" />
+          <e p="SendLikeApiMahuaCommandHandler1.cs" t="Include" />
+        </e>
+        <e p="MahuaEvents" t="Include">
+          <e p="GroupMemberIncreasedMahuaEvent1.cs" t="Include" />
+          <e p="MahuaMenuClickedMahuaEvent1.cs" t="Include" />
+          <e p="PrivateMessageFromFriendReceivedMahuaEvent.cs" t="Include" />
+          <e p="readme.md" t="Include" />
+          <e p="SendGroupMessageApiMahuaCommandHandler.cs" t="Include" />
+        </e>
+        <e p="MahuaModule.cs" t="Include" />
+        <e p="MyMenuProvider.cs" t="Include" />
+        <e p="Newbe.Mahua.Plugins.Parrot.csproj" t="IncludeRecursive" />
+        <e p="NLog.config" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="RefitStubs.g.cs" t="Include" />
+          </e>
+        </e>
+        <e p="packages.config" t="Include" />
+        <e p="PluginInfo.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="run.bat" t="Include" />
+      </e>
+      <e p="Newbe.Mahua.Plugins.Parrot.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
