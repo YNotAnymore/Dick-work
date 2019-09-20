@@ -25,8 +25,8 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
 
             // 不要忘记在MahuaModule中注册
 
-            if (context.FromQq.Equals("1829784767"))
-            {
+            //if (context.FromQq.Equals("1829784767"))
+            //{
                 // 戳一戳
                 _mahuaApi.SendPrivateMessage(context.FromQq)
                     .Shake()
@@ -35,7 +35,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
                 _mahuaApi.SendPrivateMessage(context.FromQq)
                 .Text(context.Message)
                 .Done();
-            }
+            //}
 
             //// 嘤嘤嘤，换行，重复消息
             //_mahuaApi.SendPrivateMessage(context.FromQq)

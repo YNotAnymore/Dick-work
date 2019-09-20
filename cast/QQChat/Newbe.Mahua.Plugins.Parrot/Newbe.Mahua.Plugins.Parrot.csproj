@@ -91,9 +91,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chat\XiaoBingRobot.cs" />
     <Compile Include="CusTools\CatchTools.cs" />
-    <Compile Include="Domain\Emjoy.cs" />
+    <Compile Include="Domain\CusModule\InitModule.cs" />
     <Compile Include="MahuaApis\SendLikeApiMahuaCommandHandler1.cs" />
     <Compile Include="MahuaEvents\GroupMemberDecreasedMahuaEvent1.cs" />
     <Compile Include="MahuaEvents\GroupMemberIncreasedMahuaEvent1.cs" />
@@ -108,9 +107,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <Content Include="run.bat" />
-    <None Include="buildTools\7z.exe" />
-    <None Include="buildTools\nuget.exe" />
-    <None Include="buildTools\packages.config" />
     <None Include="MahuaApis\readme.md" />
     <None Include="MahuaEvents\readme.md" />
     <None Include="NLog.config" />
@@ -120,10 +116,7 @@
     <Content Include="build.bat" />
     <Content Include="build.ps1" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Command\" />
-    <Folder Include="CusInterface\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Refit.4.4.17\build\net45\refit.targets" Condition="Exists('..\packages\Refit.4.4.17\build\net45\refit.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

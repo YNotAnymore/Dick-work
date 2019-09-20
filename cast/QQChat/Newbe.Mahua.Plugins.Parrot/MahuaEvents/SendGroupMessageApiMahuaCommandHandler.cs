@@ -38,28 +38,25 @@ namespace Newbe.Mahua.Samples.ApiExtensions.MahuaApis
 
                 CatchTools.TryRun((() =>
                 {
-                    _mahuaApi.SendGroupMessage(context.FromGroup).Text(_mahuaApi.GetFriends()).Done();
+                    _mahuaApi.SendGroupMessage(context.FromGroup).Text("获取好友列表").Newline().Text(_mahuaApi.GetFriends()).Done();
                 }));
 
                 CatchTools.TryRun((() =>
                 {
-                    _mahuaApi.SendGroupMessage(context.FromGroup).Text(_mahuaApi.GetGroupMemebers(context.FromGroup)).Done();
+                    _mahuaApi.SendGroupMessage(context.FromGroup).Text("获取成员列表").Newline().Text(_mahuaApi.GetGroupMemebers(context.FromGroup)).Done();
+                }));
+
+
+                CatchTools.TryRun((() =>
+                {
+                    _mahuaApi.SendGroupMessage(context.FromGroup).Text("获取成员列表").Newline().Text(JsonConvert.SerializeObject(_mahuaApi.GetGroupMemebersWithModel(context.FromGroup))).Done();
                 }));
 
                 CatchTools.TryRun((() =>
                 {
-                    _mahuaApi.SendGroupMessage(context.FromGroup).Text(JsonConvert.SerializeObject(_mahuaApi.GetGroupsWithModel())).Done();
+                    _mahuaApi.SendGroupMessage(context.FromGroup).Text("获取群列表").Newline().Text(JsonConvert.SerializeObject(_mahuaApi.GetGroupsWithModel())).Done();
                 }));
 
-                CatchTools.TryRun((() =>
-                {
-                    _mahuaApi.SendGroupMessage(context.FromGroup).Text(_mahuaApi.GetLoginQq()).Done();
-                }));
-
-                CatchTools.TryRun((() =>
-                {
-                    _mahuaApi.SendGroupMessage(context.FromGroup).Text(_mahuaApi.GetLoginNick()).Done();
-                }));
 
             }
             

@@ -65,17 +65,17 @@ namespace Newbe.Mahua.Plugins.Parrot
                 builder.RegisterType<PrivateMessageFromFriendReceivedMahuaEvent>()
                     .As<IPrivateMessageFromFriendReceivedMahuaEvent>();
 
-                //builder.RegisterType<SendGroupMessageApiMahuaCommandHandler>()
-                //    .As<IGroupMessageReceivedMahuaEvent>();
-                
-                //builder.RegisterType<MahuaMenuClickedMahuaEvent1>()
-                //    .As<IMahuaMenuClickedMahuaEvent>();
+                builder.RegisterType<SendGroupMessageApiMahuaCommandHandler>()
+                    .As<IGroupMessageReceivedMahuaEvent>();
 
-                //builder.RegisterType<GroupMemberIncreasedMahuaEvent1>()
-                //    .As<IGroupMemberIncreasedMahuaEvent>();
+                builder.RegisterType<MahuaMenuClickedMahuaEvent1>()
+                    .As<IMahuaMenuClickedMahuaEvent>();
 
-                //builder.RegisterType<GroupMemberDecreasedMahuaEvent1>()
-                //    .As<IGroupMemberDecreasedMahuaEvent>();
+                builder.RegisterType<GroupMemberIncreasedMahuaEvent1>()
+                    .As<IGroupMemberIncreasedMahuaEvent>();
+
+                builder.RegisterType<GroupMemberDecreasedMahuaEvent1>()
+                    .As<IGroupMemberDecreasedMahuaEvent>();
 
             }
         }
