@@ -31,6 +31,7 @@
           <e p="SendLikeApiMahuaCommandHandler1.cs" t="Include" />
         </e>
         <e p="MahuaEvents" t="Include">
+          <e p="GroupMemberDecreasedMahuaEvent1.cs" t="Include" />
           <e p="GroupMemberIncreasedMahuaEvent1.cs" t="Include" />
           <e p="MahuaMenuClickedMahuaEvent1.cs" t="Include" />
           <e p="PrivateMessageFromFriendReceivedMahuaEvent.cs" t="Include" />

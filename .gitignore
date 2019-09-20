@@ -162,7 +162,7 @@ $RECYCLE.BIN/
  
 # VisualStudioCode
 .vscode
-*.dll
+# *.dll
 bin/
 
 ## Ignore Visual Studio temporary files, build results, and
