@@ -1,17 +1,17 @@
 ﻿using Newbe.Mahua.MahuaEvents;
 using System;
 
-namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
+namespace Newbe.Mahua.Plugins.Pikachu.MahuaEvents
 {
     /// <summary>
     /// 群成员减少事件
     /// </summary>
-    public class GroupMemberDecreasedMahuaEvent1
+    public class GroupMemberDecreasedMahuaEvent
         : IGroupMemberDecreasedMahuaEvent
     {
         private readonly IMahuaApi _mahuaApi;
 
-        public GroupMemberDecreasedMahuaEvent1(
+        public GroupMemberDecreasedMahuaEvent(
             IMahuaApi mahuaApi)
         {
             _mahuaApi = mahuaApi;
@@ -23,7 +23,6 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
             var isAdminOpt = string.IsNullOrWhiteSpace(context.FromQq)?string.Empty: "[管理员操作]";
 
             _mahuaApi.SendGroupMessage(context.FromGroup)
-               .Image("TIM图片20190919172343.jpg")
                .Text($"一位小伙伴悄然离去~{context.ToQq} {isAdminOpt}")
                .Done();
 

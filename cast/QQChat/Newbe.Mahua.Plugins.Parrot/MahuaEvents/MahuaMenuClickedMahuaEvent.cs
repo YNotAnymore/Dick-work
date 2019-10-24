@@ -1,17 +1,20 @@
 ﻿using Newbe.Mahua.MahuaEvents;
+using NLog;
 using System;
 
-namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
+namespace Newbe.Mahua.Plugins.Pikachu.MahuaEvents
 {
     /// <summary>
     /// 菜单点击事件
     /// </summary>
-    public class MahuaMenuClickedMahuaEvent1
+    public class MahuaMenuClickedMahuaEvent
         : IMahuaMenuClickedMahuaEvent
     {
         private readonly IMahuaApi _mahuaApi;
 
-        public MahuaMenuClickedMahuaEvent1(
+        private static Logger _logger = LogManager.GetLogger(nameof(MahuaMenuClickedMahuaEvent));
+
+        public MahuaMenuClickedMahuaEvent(
             IMahuaApi mahuaApi)
         {
             _mahuaApi = mahuaApi;
@@ -19,6 +22,8 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
 
         public void ProcessManhuaMenuClicked(MahuaMenuClickedContext context)
         {
+
+            _logger.Info($"菜单-{context.Menu}被点击");
 
             // todo 填充处理逻辑
             //throw new NotImplementedException();

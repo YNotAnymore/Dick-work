@@ -3,7 +3,7 @@ using Newbe.Mahua;
 using Newbe.Mahua.Apis;
 using Newbe.Mahua.CQP.ApiExtensions;
 using Newbe.Mahua.MahuaEvents;
-using Newbe.Mahua.Plugins.Parrot.MahuaEvents;
+using Newbe.Mahua.Plugins.Pikachu.MahuaEvents;
 using Newbe.Mahua.Samples.ApiExtensions.MahuaApis;
 using NLog;
 
@@ -65,16 +65,16 @@ namespace Newbe.Mahua.Plugins.Parrot
                 builder.RegisterType<PrivateMessageFromFriendReceivedMahuaEvent>()
                     .As<IPrivateMessageFromFriendReceivedMahuaEvent>();
 
-                builder.RegisterType<SendGroupMessageApiMahuaCommandHandler>()
+                builder.RegisterType<GroupMessageReceivedMahuaEvent>()
                     .As<IGroupMessageReceivedMahuaEvent>();
 
-                builder.RegisterType<MahuaMenuClickedMahuaEvent1>()
+                builder.RegisterType<MahuaMenuClickedMahuaEvent>()
                     .As<IMahuaMenuClickedMahuaEvent>();
 
-                builder.RegisterType<GroupMemberIncreasedMahuaEvent1>()
+                builder.RegisterType<GroupMemberIncreasedMahuaEvent>()
                     .As<IGroupMemberIncreasedMahuaEvent>();
 
-                builder.RegisterType<GroupMemberDecreasedMahuaEvent1>()
+                builder.RegisterType<GroupMemberDecreasedMahuaEvent>()
                     .As<IGroupMemberDecreasedMahuaEvent>();
 
             }
