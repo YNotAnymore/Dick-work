@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CusHandler", "CusHandler\Cu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CusLinq", "CusLinq\CusLinq.csproj", "{5F7FACBD-85CB-411A-9A49-2C534CD1A743}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyThing", "AnyThing\AnyThing.csproj", "{890CE3B7-23F9-40F7-8F50-99C9D2C01D25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyThing", "AnyThing\AnyThing.csproj", "{890CE3B7-23F9-40F7-8F50-99C9D2C01D25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{ADA5B3AB-E968-4FDD-8F89-880179504752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{890CE3B7-23F9-40F7-8F50-99C9D2C01D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{890CE3B7-23F9-40F7-8F50-99C9D2C01D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{890CE3B7-23F9-40F7-8F50-99C9D2C01D25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA5B3AB-E968-4FDD-8F89-880179504752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA5B3AB-E968-4FDD-8F89-880179504752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA5B3AB-E968-4FDD-8F89-880179504752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA5B3AB-E968-4FDD-8F89-880179504752}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

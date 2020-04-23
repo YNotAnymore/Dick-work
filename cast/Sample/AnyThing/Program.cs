@@ -1,23 +1,21 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Text.Json.Serialization;
+using System.ComponentModel;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace AnyThing
 {
+    [Customer]
     class Program
     {
+        [return: Customer]
         static void Main(string[] args)
         {
 
-            var data = "{\"data\":1}";
+            Component component = new SqlConnection();
 
-            var empty = JsonConvert.DeserializeObject<string>(data);
-
-            Console.WriteLine(empty);
-
-            var str = System.Text.Json.JsonSerializer.Deserialize<string>(data);
-
-            Console.WriteLine(data);
+            var obj = component.GetLifetimeService();
 
             Console.WriteLine("Hello World!");
 
@@ -25,4 +23,5 @@ namespace AnyThing
 
         }
     }
+
 }
