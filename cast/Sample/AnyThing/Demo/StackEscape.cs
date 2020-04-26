@@ -29,7 +29,7 @@ namespace AnyThing.Demo
                         //Console.WriteLine($"{i++}");// 栈逃逸
                         // 加wait仍然会出现新线程
                         //Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId}");
-                        Console.WriteLine(k);
+                        Console.WriteLine(k);// 正常输出
                     });
 
                     //Task.Delay(1).Wait();
@@ -43,6 +43,19 @@ namespace AnyThing.Demo
                 Console.WriteLine($"xxx{i}");
             }
             //int i = 0; error
+
+            //List<int> list = new List<int>();
+
+            //for (int i = 0; i < 2;)
+            //{
+            //    Task.Run(() =>
+            //    {
+            //        Console.WriteLine(i++);
+            //    });
+            //    list.Add(i);
+            //}
+
+            //Console.WriteLine($"count:{list.Count}");
 
         }
     }

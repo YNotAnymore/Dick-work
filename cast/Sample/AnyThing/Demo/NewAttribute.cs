@@ -13,6 +13,37 @@ namespace AnyThing.Demo
     public class NewAttribute
     {
 
+        #region using
+        class Data : IDisposable
+        {
+
+            public void Run()
+            {
+                if (dispose)
+                {
+                    throw new ObjectDisposedException(nameof(Data));
+                }
+                Console.WriteLine("I'm running");
+            }
+
+            private bool dispose;
+
+            public void Dispose()
+            {
+                Console.WriteLine("data dispose");
+                dispose = true;
+            }
+
+            public Data GetDisposeData()
+            {
+                using Data data = new Data();
+                return data;
+            }
+
+        }
+
+        #endregion
+
 
         #region C# 7.0+
 
