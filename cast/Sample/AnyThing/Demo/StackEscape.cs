@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace AnyThing.Demo
 {
@@ -56,6 +57,25 @@ namespace AnyThing.Demo
             //}
 
             //Console.WriteLine($"count:{list.Count}");
+
+            {
+                //int a = 0;
+
+                //var rand = new Random();
+
+                //for (int i = 0; i < 10; i++)
+                //{
+                //    new Thread(new ThreadStart(() =>
+                //    {
+                //        Thread.Sleep(100);
+
+                //        Console.WriteLine($"current a : {a}");
+                //        a++;
+                //        Console.WriteLine($"next a should be : {a}");
+
+                //    })).Start();
+                //}
+            }
 
         }
     }

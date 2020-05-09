@@ -332,5 +332,22 @@ namespace AnyThing.Demo
 
         #endregion
 
+        #region get Attribute
+
+        static void GetAttribute()
+        {
+
+            // 获取返回特性
+            //var p = typeof(Program).GetMethod("Main",BindingFlags.NonPublic | BindingFlags.Static).ReturnTypeCustomAttributes.GetCustomAttributes(false);
+
+            // .net 中的组件
+            //Component component = new SqlConnection();
+
+            //var obj = component.GetLifetimeService();
+
+        }
+
+        #endregion
+
     }
 }

@@ -1,12 +1,7 @@
-﻿using Common.CusAttribute;
-using Newtonsoft.Json;
-using Pikachu.Data;
+﻿using AnyThing.Demo;
+using Common.CusAttribute;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.SqlClient;
-using System.Net.Sockets;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -17,19 +12,9 @@ namespace AnyThing
     class Program
     {
 
-        [return: Customer,Description]
+        [return: Customer, Description]
         static void Main(string[] args)
         {
-
-            //new ThreadDemo().Work();
-
-            // 获取返回特性
-            //var p = typeof(Program).GetMethod("Main",BindingFlags.NonPublic | BindingFlags.Static).ReturnTypeCustomAttributes.GetCustomAttributes(false);
-
-            // .net 中的组件
-            //Component component = new SqlConnection();
-
-            //var obj = component.GetLifetimeService();
 
             Console.WriteLine("Hello World!");
 
@@ -37,15 +22,35 @@ namespace AnyThing
 
         }
 
-        async void Run()
+        private static void TestChannelDemo()
         {
+            CancellationToken token = new CancellationToken();
 
-            var info = Task.Run(() => { });
+            //// TA别读太快了，弄1个task读
+            //ChannelDemo channelDemo = new ChannelDemo(1, token);
 
-            await info;
+            // 发得有点快，你多弄几个收吧
+            ChannelDemo channelDemo = new ChannelDemo(10, token);
 
+            //// 单线程发100次
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    channelDemo.Write($"这是第{(i + 1)}条消息");
+            //}
+
+            //// 等待0.5s后发送
+            //Thread.Sleep(500);
+
+            // 并发发送
+            Parallel.For(1, 1000000, (num) =>
+            {
+
+                channelDemo.Write($"这是第{(num)}条新闻");
+
+            });
+
+            // 发送完后才进行监听
+            channelDemo.BeginListener();
         }
-
     }
-
 }
