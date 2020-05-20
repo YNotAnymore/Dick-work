@@ -15,7 +15,7 @@ namespace GrpcClient2
             var client = new Greeter.GreeterClient(channel);
 
             var input = "test";
-            var reply = client.SayHello(new HelloRequest { Name = null });
+            var reply = client.SayHello(new HelloRequest { Name = "test" });
             Console.WriteLine("来自" + reply.Message);
 
             channel.ShutdownAsync().Wait();

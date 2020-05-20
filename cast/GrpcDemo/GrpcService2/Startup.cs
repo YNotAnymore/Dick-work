@@ -20,11 +20,13 @@ namespace GrpcService2
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddGrpcClient<GreeterClient>(options => {
+            services.AddGrpcClient<GreeterClient>(options =>
+            {
 
                 options.Address = new Uri("https://localhost:5002");
-                
-            }).ConfigureChannel(options => {
+
+            }).ConfigureChannel(options =>
+            {
 
                 CallCredentials callCredentials = CallCredentials.FromInterceptor(async (context, metadata) =>
                 {

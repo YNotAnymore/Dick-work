@@ -72,7 +72,7 @@ namespace AnyThing.Demo
                 while (_channel.Reader.TryRead(out var msg))
                 {
                     // 貌似不会出现多次读取的情况 这么nice吗？
-                    // 通过查找源码 https://source.dot.net/#q=Channel，发现内部有锁机制(lock锁/自旋)保证同步性...
+                    // 通过查找源码 https://source.dot.net/#q=Channel，发现内部有机制(lock锁、自旋、Volatile等)保证同步性...
                     Console.WriteLine($"({Thread.CurrentThread.ManagedThreadId})[{DateTime.Now:hh:MM:ss fff}]receive a msg : {msg}");
 
                     //// 其他处理

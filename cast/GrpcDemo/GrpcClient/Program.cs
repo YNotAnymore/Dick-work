@@ -13,7 +13,7 @@ namespace GrpcClient
 
             var client = new GrpcService.GrpcServiceClient(channel);
 
-            var input = Console.ReadLine();
+            var input = "test";
             var reply = client.SayHello(new HelloRequest { Name = input });
             Console.WriteLine("来自" + reply.Message);
 

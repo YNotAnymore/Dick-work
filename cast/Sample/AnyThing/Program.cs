@@ -16,10 +16,37 @@ namespace AnyThing
         static void Main(string[] args)
         {
 
+            int i = 1;
+
+            i = i++;
+
+            int j = i;
+
+            Console.WriteLine(j);
+
+            Console.WriteLine(i);
+
+            var param = "{\"SupplierUserID\":42,\"SupplierNickName\":\"TH\",\"OrderID\":37653,\"OpenID\":\"o4odp0_igG7nwgXzIgCM5cmEsu_c\",\"supplierStrNewState\":\"新订单\",\"cnItemName\":\"土豪船皇帝岛一日游\",\"OrderNo\":\"202005141059017653\",\"Title\":\"您好，您有一条订单等待处理。\\r\\n \",\"Remark\":\" \\r\\n 请及时登录系统后台进行处理，谢谢！\"} ";
+
+            var evt = System.Text.Json.JsonSerializer.Deserialize<OrderSendSupplierWxConfirm_LtgEvt>(param,new System.Text.Json.JsonSerializerOptions() { PropertyNameCaseInsensitive = true});
+
             Console.WriteLine("Hello World!");
 
             Console.ReadKey(true);
 
+        }
+
+        public class OrderSendSupplierWxConfirm_LtgEvt
+        {
+            public string OrderNo { get; set; }
+            public int OrderID { get; set; }
+            public string SupplierStrNewState { get; set; }
+            public string cnItemName { get; set; }
+            public string OpenID { get; set; }
+            public string SupplierNickName { get; set; }
+            public int SupplierUserID { get; set; }
+            public string Title { get; set; }
+            public string Remark { get; set; }
         }
 
         private static void TestChannelDemo()
