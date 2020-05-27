@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AnyThing
 {
@@ -21,14 +22,13 @@ namespace AnyThing
         static void Main(string[] args)
         {
 
-            { // 反射生成代理
-
-                // 使用 Castle.Core 生成代理
-
-                ProxyGenerator proxyGenerator = new ProxyGenerator();
-                Worker worker = proxyGenerator.CreateClassProxy<Worker>(new WorkerInterceptor());
-                worker.Run();
-
+            // 闭包的概念:内层函数引用的外层函数的变量的最终值。
+            for (int i = 0; i < 10; i++)
+            {
+                Task.Run(() => 
+                {
+                    Console.WriteLine(i);
+                });
             }
 
             // byte [0~255]
@@ -39,23 +39,6 @@ namespace AnyThing
 
         }
 
-        public class WorkerInterceptor : IInterceptor
-        {
-            public void Intercept(IInvocation invocation)
-            {
-                Console.WriteLine("进入方法" );
-                invocation.Proceed();
-                Console.WriteLine("离开方法，返回值:" + invocation.ReturnValue);
-            }
-        }
-
-        public class Worker
-        {
-            public void Run()
-            {
-                Console.WriteLine("I'm working");
-            }
-        }
 
     }
 }
