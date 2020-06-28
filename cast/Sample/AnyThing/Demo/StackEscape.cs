@@ -43,6 +43,18 @@ namespace AnyThing.Demo
                 var i = 1000;
                 Console.WriteLine($"xxx{i}");
             }
+
+            {
+                // 闭包的概念:内层函数引用的外层函数的变量的最终值。
+                for (int i = 0; i < 10; i++)
+                {
+                    Task.Run(() =>
+                    {
+                        Console.WriteLine(i);
+                    });
+                }
+            }
+
             //int i = 0; error
 
             //List<int> list = new List<int>();

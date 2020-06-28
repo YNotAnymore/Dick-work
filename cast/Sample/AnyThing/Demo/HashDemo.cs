@@ -37,6 +37,44 @@ namespace AnyThing.Demo
             return hash;
         }
 
+        const long FNV32basis = 0x811C9DC5;
+
+        public static ulong FNVHCore(string str)
+        {
+            ulong hash = FNV32basis;
+            for (int i = 0; i < str.Length; i++)
+            {
+                hash = (hash ^ str[i]) * FNV_prime;
+            }
+            hash += hash << 8;
+            hash ^= hash >> 7;
+            hash += hash << 11;
+            hash ^= hash >> 6;
+            hash += hash << 15;
+            return hash;
+        }
+
+
+        public static uint ELFhash(string str)
+        {
+
+            uint h = 0;
+            uint x = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                h = (h << 4) + (str[i]);  //h左移4位，当前字符ASCII存入h的低四位
+                if ((x = h & 0xF0000000) != 0)
+                { //如果最高位不为0，则说明字符多余7个，如果不处理，再加第九个字符时，第一个字符会被移出
+                  //因此要有如下处理
+                    h ^= (x >> 24);
+                    //清空28~31位
+                    h &= ~x;
+                }
+            }
+
+            return h % 0x7FFFFFFF;
+        }
+
         public static void Run()
         {
 
@@ -64,11 +102,11 @@ namespace AnyThing.Demo
 
             //}
 
-            for (int i = 0; i < 10000000; i++)
-            {
-                var str = Guid.NewGuid().ToString();
-                hashTable.Add(FNVH(str), str);
-            }
+            //for (int i = 0; i < 10000000; i++)
+            //{
+            //    var str = Guid.NewGuid().ToString();
+            //    hashTable.Add(FNVH(str), str);
+            //}
 
             //Task.WaitAll(tasks);
 
