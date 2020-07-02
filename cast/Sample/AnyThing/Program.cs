@@ -1,13 +1,19 @@
 ﻿using AnyThing.Demo;
+using AnyThing.SpeedTest;
+using BenchmarkDotNet.Running;
 using Castle.DynamicProxy;
+using Command.Tools;
 using Common.CusAttribute;
 using Common.Extension;
 using Perfolizer.Mathematics.Randomization;
 using StackExchange.Redis;
 using System;
+using System.Buffers;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -18,26 +24,6 @@ using System.Threading.Tasks;
 namespace AnyThing
 {
 
-    /// <summary>
-    /// 验证码类型
-    /// </summary>
-    public enum CodeTypes
-    {
-        /// <summary>
-        /// 登录
-        /// </summary>
-        Login = 1,
-        /// <summary>
-        /// 注册
-        /// </summary>
-        Register = 2,
-        /// <summary>
-        /// 密码修改
-        /// </summary>
-        ChangePwd = 3
-
-    }
-
     [Customer]
     public class Program
     {
@@ -47,21 +33,30 @@ namespace AnyThing
         [return: Customer, Description]
         static void Main(string[] args)
         {
+            // Benchmark Test
+            {
+                //BenchmarkDotNet.Reports.Summary summary = BenchmarkRunner.Run<ForeachTest>();
+
+            }
 
             {
+                CodeTimer timer = new CodeTimer();
 
-                ConnectionMultiplexer conn = ConnectionMultiplexer.Connect("localhost,allowAdmin=true,abortConnect=false,connectTimeout=2000");
-                IDatabase database = conn.GetDatabase();
+                ForeachTest test = new ForeachTest();
 
-                //string setKey = "anything.test.set";
-
-                //database.SetAdd(setKey, 28394710);
-
-                //RedisValue redisValue = database.SetPop(setKey);
-                //RedisValue redisValue2 = database.SetPop(setKey);
-
-                database.KeyDelete("account.valid.code.set");
-                database.KeyDelete("account.valid.code.start");
+                for (int i = 10; i < 20; i++)
+                {
+                    Console.WriteLine($@"{nameof(test.Normal)} time :
+{timer.Time(i,test.Normal)}
+");
+                    Console.WriteLine($@"{nameof(test.NormalParallel)} time :
+{timer.Time(i,test.NormalParallel)}
+");
+                    Console.WriteLine($@"{nameof(test.PartitionerParallel)} time :
+{timer.Time(i,test.PartitionerParallel)}
+");
+                    Console.WriteLine("-------------------------");
+                }
 
             }
 
@@ -72,7 +67,6 @@ namespace AnyThing
             Console.ReadKey(true);
 
         }
-
 
     }
 }

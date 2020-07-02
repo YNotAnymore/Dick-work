@@ -1,0 +1,301 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <div id="loginBox">
+
+        登录：<input type="text" id="token" placeholder="token" /> <input type="button" id="login" value="login" />
+
+    </div>
+
+    <div style="margin-top:20px">
+        <input id="connect" type="button" value="connect" />
+    </div>
+
+    <div style="margin-top:20px;display:none;" id="functionBox">
+
+        <input id="connect" type="button" value="获取会话列表-租客" onclick="getSessionList(0)" />
+        <input id="connect" type="button" value="获取会话列表-出/转租人" onclick="getSessionList(1)" />
+
+        <div id="generate">
+            <hr />
+            <div id="sessionBox">
+                <h2>会话列表</h2>
+                <ul id="sessionList"></ul>
+            </div>
+            <hr />
+            <div id="chatBox" style="display:none;">
+                <h2>聊天列表</h2>
+                <ul id="chatList"></ul>
+                <input type="text" id="msg" placeholder="请输入消息内容" /> <input type="button" id="sendMsg" onclick="sendMsg()" value="sendMsg" />
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    var ws;
+
+    function getConnection(token) {
+        // 获取连接
+        let xhr = new XMLHttpRequest();
+        xhr.open('post', 'http://localhost:5000/chatHub/negotiate?negotiateVersion=1&access_token=' + token, true);
+        xhr.onload = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let res = JSON.parse(this.response);
+                connect(token, res.connectionToken);
+            } else {
+                alert("token授权失败，请重新填写token");
+            }
+        }
+        xhr.onerror = () => {
+            alert("token授权失败，请重新填写token");
+        }
+        xhr.send();
+    }
+
+    function connect(token, connectionToken) {
+
+        // 打开连接
+        ws = new WebSocket("ws://localhost:5000/chatHub?id=" + connectionToken + '&access_token=' + token);
+
+        ws.onopen = function (evt) {  //绑定连接事件
+            console.log("Connection open ...");
+            // 告知连接协议
+            ws.send('{"protocol":"json","version":1}');
+            // TODO : 心跳
+            // ws.send('{"type":6}');
+            connOpen();
+        };
+
+        ws.onmessage = function (evt) {//绑定收到消息事件
+            console.log(evt);
+            //console.log("Received Message: " + evt.data);
+            let data = JSON.parse(evt.data.replace("", ""));
+
+            console.log(data);
+
+            if (data.type == 3) {// 执行返回
+                if (data.error) {
+                    alert("获取异常");
+                } else {
+                    if (data.result.code) {
+                        var func = callbackDic[data.invocationId];
+                        if (func)
+                            func(data.result.data);
+                    } else {
+                        alert(data.result.error);
+                    }
+                }
+            } else if (data.type = 1) { // 消息推送
+                if (data.target == "NewMsg") {
+                    newMsgNotice(data.arguments[0]);
+                } else if (data.target == "NewSession") {
+                    newSessionNotice(data.arguments[0]);
+                }
+            }
+
+        };
+
+        ws.onclose = function (evt) { //绑定关闭或断开连接事件
+            console.log("Connection closed.");
+            connClose();
+        };
+
+    }
+
+</script>
+
+<script type="text/javascript">
+
+    var callbackDic = new Array();
+
+    var invocationId = 1000;
+
+    function commonSend(arg, target, callback) {
+
+        let param = new Object();
+        param.arguments = arg;
+        param.invocationId = invocationId.toString();
+        param.streamIds = [];
+        param.target = target;
+        param.type = 1;
+
+        if (callback)
+            callbackDic[param.invocationId] = callback;
+
+        let paramStr = JSON.stringify(param) + '';
+
+        ws.send(paramStr);
+
+        invocationId++;
+
+    }
+
+    function getSessionList(type) {
+
+        $("#chatBox").removeAttr("sessionId");
+        $("#chatBox").hide();
+        $("#chatList li").remove();
+        if (type == 0) {
+            $("#chatBox").removeClass("ToLandlord");
+        } else {
+            $("#chatBox").addClass("ToLandlord");
+        }
+
+        let page = new Object();
+        page.pageSize = 10;
+        page.pageIndex = 0;
+
+        let param = new Object();
+        param.type = type;
+        param.pager = page;
+
+        let arr = [];
+        arr.push(param);
+
+        commonSend(arr, 'GetSessionList', receiverSessionList);
+
+    }
+
+    function connOpen() {
+        $("#functionBox").show();
+    }
+
+    function connClose() {
+        $("#functionBox").hide();
+    }
+
+    function getMessage(sessionId) {
+        let page = new Object();
+        page.pageSize = 10;
+        page.pageIndex = 0;
+
+        let arr = [];
+        arr.push(sessionId);
+        arr.push(page);
+
+        commonSend(arr, 'GetMessages', receiverMessageList);
+
+    }
+
+
+</script>
+
+<script type="text/javascript">
+
+    function receiverMessageList(data) {
+        console.log(data);
+        $("#chatList li").remove();
+
+        $(data.result).each((index, item) => {
+            var $li = $("<li></li>");
+            $li.append(item.sender + '[' + item.addDate + ']<br/>  ' + item.content);
+
+            $("#chatList").prepend($li);
+        });
+        $("#chatBox").show();
+    }
+
+    function receiverSessionList(data) {
+
+        $("#sessionList li").remove();
+
+        $(data.result).each((index, item) => {
+            var $li = $("<li></li>");
+            var $btn = $('<input id="connect" type="button" value="进行聊天" />  ');
+            $btn.click(() => {
+                getMessage(item.id);
+                $("#chatBox").attr("sessionId", item.id);
+            });
+            $li.append($btn);
+            $li.append(item.id);
+
+            $("#sessionList").prepend($li)
+        });
+        $("#chatBox").hide();
+    }
+
+</script>
+<script type="text/javascript">
+
+    function newMsgNotice(data) {
+        var sessionId = $("#chatBox").attr("sessionId");
+        if (data.sessionId == sessionId) {
+            var $li = $("<li></li>");
+            $li.append(data.sender + '[' + data.addDate + '] <br/>  ' + data.content);
+
+            $("#chatList").prepend($li);
+        } else {
+            alert('你有一条新消息 FROM ' + data.sessionId);
+        }
+    }
+
+    function newSessionNotice(data) {
+        if ($("#chatBox").hasClass("ToLandlord")) {
+            var $li = $("<li></li>");
+            var $btn = $('<input id="connect" type="button" value="进行聊天" />  ');
+            $btn.click(() => {
+                getMessage(data.id);
+                $("#chatBox").attr("sessionId", data.id);
+            });
+            $li.append($btn);
+            $li.append(data.id);
+
+            $("#sessionList").prepend($li)
+        } else {
+            alert('你有一条新会话 FROM ' + data.id);
+        }
+    }
+
+</script>
+
+<script type="text/javascript">
+
+    function sendMsg() {
+
+        let msgObj = new Object();
+        msgObj.sessionId = $("#chatBox").attr("sessionId");
+        msgObj.type = 1;
+        msgObj.content = $("#msg").val();
+        let arr = [];
+        arr.push(msgObj);
+
+        if ($("#chatBox").hasClass("ToLandlord")) {
+            commonSend(arr, 'SendMessageToLandlord');
+        } else {
+            commonSend(arr, 'SendMessageToTenant');
+        }
+        var $li = $("<li></li>");
+        $li.append(msgObj.content);
+
+        $("#chatList").append($li);
+        $("#msg").val('');
+    }
+
+    $("#connect").click(() => {
+        var token = localStorage.getItem("token");
+        getConnection(token);
+    });
+
+    $(document).ready(() => {
+        var token = localStorage.getItem("token");
+        $("#token").val(token);
+    });
+
+    $("#login").click(() => {
+        var token = $("#token").val();
+        localStorage.setItem("token", token);
+        alert("set token success");
+    });
+
+</script>
