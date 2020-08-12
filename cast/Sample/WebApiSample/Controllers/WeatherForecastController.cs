@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using DotNetCore.CAP;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using AspectCore.Extensions.DependencyInjection;
+using AspectCore.Extensions.AspectScope;
+using AspectCore.DynamicProxy;
 
 namespace WebApiSample.Controllers
 {
@@ -42,4 +45,13 @@ namespace WebApiSample.Controllers
             .ToArray();
         }
     }
+
+    public class CustomInterceptorAttribute : ScopeInterceptorAttribute
+    {
+        public override Task Invoke(AspectContext context, AspectDelegate next)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
 }
