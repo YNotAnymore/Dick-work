@@ -1,4 +1,5 @@
 ﻿using Common.CusAttribute;
+using Microsoft.International.Converters.PinYinConverter;
 using Newtonsoft.Json.Linq;
 using StackExchange.Redis;
 using System;
@@ -16,28 +17,117 @@ using System.Xml.XPath;
 namespace AnyThing
 {
 
+    public class SingleData<T>
+    {
+        public T Data { get; set; }
+    }
+
     [Customer]
     public class Program : IThing
     {
 
-        static int numA;
-
-        static readonly int numB;
-
-        const int numC = 1;
-
-        private const int _diff = 'a' - 'A';
-
-        public static char UpperToLower(char c)
-        {
-            if (c >= 'a')
-                return c;
-            return (char)(c + _diff);
-        }
-
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
+
+            {
+
+                ConnectionMultiplexer connectionMultiplexer = ConnectionMultiplexer.Connect("localhost,allowAdmin=true,abortConnect=false,connectTimeout=2000");
+
+                Console.WriteLine(connectionMultiplexer.GetType().Name);
+
+                IDatabase database = connectionMultiplexer.GetDatabase();
+
+                var key = $"h5.user.token.9b9091a27ae54e59b0344c2e62270286";
+
+                //for (int i = 0; i < 10; i++)
+                //{
+                //    database.SortedSetAdd(key, i, (DateTime.Now.AddSeconds(2 + i) - new DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds);
+                //}
+
+                //database.KeyExpire(key, TimeSpan.FromSeconds(5));
+
+                //// 清空至最后一个                                                                                                                                                                                                                                                                                                                                       
+                //long len = database.SortedSetLength(key);
+
+                //database.SortedSetRemoveRangeByRank(key, 0, 0);
+
+                //database.SortedSetRemoveRangeByRank(key, 0, 4);
+
+                Console.WriteLine("存活的value:");
+                var sortedSetEntries = database.SortedSetRangeByRankWithScores(key);
+
+                foreach (var item in sortedSetEntries)
+                {
+                    Console.WriteLine($"{item.Element}-{item.Score}\n");
+                }
+
+                //var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjAxZDJkYzNmMGMyNjRiMzk4MDllNTUwZjQ5MzRkYzA2IiwiVGVhbUlkIjoiZGIwZWNiZjM4NDg0NDRkZTk3OTQyZjEyZGUyYWFhMjIiLCJBdXRoU291cmNlIjoiQ3VzdG9tZSIsIlNvdXJjZSI6IldlYiIsImV4cCI6MTU5Nzk3NDE5MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIn0.TInjfwyuaKPbYKw2bpmjfLnzs0QeIIg_VkeTKLIfjTc";
+
+                //bool result = database.SortedSetScanAsync(key, token).GetAsyncEnumerator().MoveNextAsync().Result;
+
+                //Console.WriteLine(result);
+
+                //for (int i = 0; i < 10; i++)
+                //{
+                //    double score = (DateTime.Now.AddSeconds(5) - new DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds;
+                //    Console.WriteLine("存活的value:");
+                //    SortedSetEntry[] sortedSetEntries = database.SortedSetRangeByScoreWithScores(key, score);
+
+                //    foreach (var item in sortedSetEntries)
+                //    {
+                //        Console.WriteLine($"{item.Element}-{item.Score}");
+                //    }
+                //    Thread.Sleep(1000);
+                //}
+
+                //long v = database.SortedSetLengthByValue(key, "1", "1");
+
+                //Console.WriteLine(v);
+
+                //Console.WriteLine(database.SortedSetRemove(key, "1"));
+
+                //while (true)
+                //{
+
+                //    double score = (DateTime.Now.AddSeconds(5) - new DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds;
+
+                //    Console.WriteLine(score);
+
+                //    SortedSetEntry[] sortedSetEntries = database.SortedSetRangeByScoreWithScores(key, 0, score);
+
+                //    if (sortedSetEntries == null || sortedSetEntries.Length == 0) continue;
+
+                //    foreach (var item in sortedSetEntries)
+                //    {
+                //        Console.WriteLine($"{item.Element}-{item.Score}");
+                //    }
+
+                //    database.SortedSetRemoveRangeByScore(key, 0, score);
+
+                //    break;
+
+                //}
+
+                //v = database.SortedSetLengthByValue(key, "1", "1");
+
+                //Console.WriteLine(v);
+
+                //Console.WriteLine(database.SortedSetRemove(key,"1"));
+
+                //Console.WriteLine("存活的value:");
+
+                //RedisValue[] redisValues = database.SortedSetRangeByRank(key);
+
+                //foreach (var item in redisValues)
+                //{
+                //    Console.WriteLine($"{item}");
+                //}
+                //database.KeyDelete(key);
+
+                Console.WriteLine((DateTime.Now.AddMinutes(3) - new DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds);
+
+            }
 
             {
                 //XPathDocument xml = new XPathDocument(@"F:\WorkSpace\UA_Foundation\Application\ZeusSys.AdminApi\bin\Debug\netcoreapp3.1\ZeusSys.AdminApi.xml");
@@ -87,6 +177,14 @@ namespace AnyThing
 
         }
 
+        private const int _diff = 'a' - 'A';
+
+        public static char UpperToLower(char c)
+        {
+            if (c >= 'a')
+                return c;
+            return (char)(c + _diff);
+        }
 
         private static void TestRedis()
         {

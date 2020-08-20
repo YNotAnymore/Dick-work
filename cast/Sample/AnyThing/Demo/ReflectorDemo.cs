@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
@@ -68,7 +69,36 @@ namespace ConsoleApp.Demo
 
         }
 
-        
+
+        public static string GetValue(object obj, string[] prop, int index)
+        {
+            if (index >= prop.Length) return default;
+
+            object value = obj.GetType().GetProperty(prop[index])?.GetValue(obj);
+
+            if (value == null) return default;
+
+            if (index == prop.Length - 1) return value.ToString();
+
+            return GetValue(value, prop, index + 1);
+
+        }
+
+        private static string GetFullName(MethodInfo method)
+        {
+
+            var paramStr = string.Join(',', method.GetParameters().Select(u => {
+
+                if (u.ParameterType.IsGenericType)
+                {
+                    return $"{u.ParameterType.FullName.Substring(0, u.ParameterType.FullName.IndexOf('`'))}{{{string.Join(",", u.ParameterType.GetGenericArguments().Select(u => u.FullName))}}}";
+                }
+
+                return u.ParameterType.FullName;
+            }));
+
+            return $"{method.DeclaringType.FullName}.{method.Name}({paramStr})";
+        }
 
         static MethodInfo GetGenericMethod(Type type, string name, params Type[] types)
         {
