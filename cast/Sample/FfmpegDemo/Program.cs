@@ -24,20 +24,43 @@ namespace FfmpegDemo
             #endregion
 
             #region 不同尺寸合并
-            param = "-i vedio.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts 1.ts";
-            //param = "- i vedio.mp4 - f mpegts - codec:v mpeg1video -codec:a mp2 -b 0 1.ts";
-            res = FfmpegHelper.RunProcessPrintTime(path, param);
-            Console.WriteLine(res);
+            //param = "-i vedio.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts 1.ts";
+            ////param = "- i vedio.mp4 - f mpegts - codec:v mpeg1video -codec:a mp2 -b 0 1.ts";
+            //res = FfmpegHelper.RunProcessPrintTime(path, param);
+            //Console.WriteLine(res);
 
-            param = "-i PC-video.mp4 -c copy -bsf:v h264_mp4toannexb -b:v 500k -f mpegts 2.ts";
-            res = FfmpegHelper.RunProcessPrintTime(path, param);
-            Console.WriteLine(res);
+            //param = "-i PC-video.mp4 -c copy -bsf:v h264_mp4toannexb -b:v 500k -f mpegts 2.ts";
+            //res = FfmpegHelper.RunProcessPrintTime(path, param);
+            //Console.WriteLine(res);
 
-            param = @"-i ""concat:1.ts|2.ts"" -c copy -bsf:a aac_adtstoasc -movflags +faststart -c copy contact.mp4";
-            res = FfmpegHelper.RunProcessPrintTime(path, param);
+            //param = @"-i ""concat:1.ts|2.ts"" -c copy -bsf:a aac_adtstoasc -movflags +faststart -c copy contact.mp4";
+            //res = FfmpegHelper.RunProcessPrintTime(path, param);
             #endregion
 
-            Console.WriteLine(res);
+            #region amr -> mp3
+
+            //param = @"-y -i ""F:\Davis\Data\voice\1.amr"" ""F:\Davis\Data\voice\1.mp3""";
+            //param = @"-y -loglevel info  -f amr -i ""F:\Davis\Data\voice\1.amr""  -f mp3  -ar 44100 ""F:\Davis\Data\voice\1.mp3""";
+            //param = @"-y -loglevel info  -f amr -i ""F:\Davis\Data\voice\1.amr""  -f mp3  ""F:\Davis\Data\voice\1.mp3""";
+            //res = FfmpegHelper.RunProcessPrintTime(path, param);
+
+            #endregion
+
+
+            //param = @"-i F:\Davis\Data\voice\1.amr";
+            //param = @"-i https://m801.music.126.net/20200826104543/a57d4bb013ca51c70b27256688f435aa/jdyyaac/0659/535b/525a/134403a105d1cf770b52e0234058ff53.m4a";
+            //param = @"-i http://132.232.105.129:8080/uploads/voice/2020/8/31/2443e30d26c74947b515df1967098ada.mp3";
+            //res = FfmpegHelper.RunProcessPrintTime(path, param);
+
+            //Console.WriteLine(res);
+
+            #region 获取mp3长度
+
+            int duration = FfmpegHelper.GetDurationByffmpeg(@"http://132.232.105.129:8080/uploads/voice/2020/8/31/2443e30d26c74947b515df1967098ada.mp3", path);
+
+            Console.WriteLine(duration);
+
+            #endregion
 
             Console.WriteLine("Hello World!");
 

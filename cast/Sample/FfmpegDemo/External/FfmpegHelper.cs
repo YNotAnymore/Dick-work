@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace FfmpegDemo.External
 {
@@ -53,6 +54,8 @@ namespace FfmpegDemo.External
                 output = srOutput.ReadToEnd();
 
                 //关闭处理程序
+                proc.WaitForExit(1 * 1000);
+
                 //proc.Close();
             }
             catch (Exception)
@@ -72,5 +75,53 @@ namespace FfmpegDemo.External
             return output;
         }
 
+        /// <summary>
+        /// 利用ffmpeg获取指定文件的时长，单位:秒;
+        /// 调用:var duration = GetDurationByffmpeg(filePath, @"/ffmpeg.exe");
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <param name="ffmpegVirtualPath">ffmpeg.exe的路径</param>
+        /// <returns></returns>
+        public static int GetDurationByffmpeg(string filePath, string ffmpegPath)
+        {
+            int duration = 0;
+            try
+            {
+                using (Process pro = new Process())
+                {
+                    pro.StartInfo.UseShellExecute = false;
+                    pro.StartInfo.ErrorDialog = false;
+                    pro.StartInfo.RedirectStandardError = true;
+
+                    pro.StartInfo.FileName = ffmpegPath;
+                    pro.StartInfo.Arguments = " -i " + filePath;
+
+                    pro.Start();
+                    StreamReader errorreader = pro.StandardError;
+                    pro.WaitForExit(1 * 1000);
+
+                    string result = errorreader.ReadToEnd();
+                    Console.WriteLine(result);
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        result = result.Substring(result.IndexOf("Duration: ") + ("Duration: ").Length,
+                            ("00:00:00").Length);
+
+                        var matchs = Regex.Match(result, @"(\d{2}):(\d{2}):(\d{2})");
+                        var hour = Convert.ToInt32(matchs.Groups[1].Value);
+                        var minute = Convert.ToInt32(matchs.Groups[2].Value);
+                        var second = Convert.ToInt32(matchs.Groups[3].Value);
+
+                        var len = hour * 3600 + minute * 60 + second;
+                        duration = len;
+                    }
+                    return duration;
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return 0;
+        }
     }
 }
