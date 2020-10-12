@@ -45,15 +45,14 @@
 
     var ws;
 
-    function getConnection(token) {
+    function getConnection() {
         // 获取连接
         let xhr = new XMLHttpRequest();
-        //xhr.open('post', 'http://192.168.0.135:5000/msgapi/chatHub/negotiate?negotiateVersion=1&access_token=' + token, true);
-        xhr.open('post', 'https://tao.aiyunge.cn/chatHub/negotiate?negotiateVersion=1&access_token=' + token, true);
+        xhr.open('post', 'http://localhost:5333/streamHub/negotiate?negotiateVersion=1', true);
         xhr.onload = function () {
             if (this.readyState == 4 && this.status == 200) {
                 let res = JSON.parse(this.response);
-                connect(token, res.connectionToken);
+                connect(res.connectionToken);
             } else {
                 alert("token授权失败，请重新填写token");
             }
@@ -68,11 +67,10 @@
         ws.send('{"arguments":[{"content":"' + content + '"}],"invocationId":"1","target":"SendTxtToServiceMsg","type":1,"streamIds":[]}')
     }
 
-    function connect(token, connectionToken) {
+    function connect(connectionToken) {
 
         // 打开连接
-        //ws = new WebSocket("ws://192.168.0.135:5000/msgapi/chatHub?id=" + connectionToken + '&access_token=' + token);
-        ws = new WebSocket("wss://tao.aiyunge.cn/chatHub?id=" + connectionToken + '&access_token=' + token);
+        ws = new WebSocket("ws://localhost:5333/streamHub?id=" + connectionToken);
 
         ws.onopen = function (evt) {  //绑定连接事件
             console.log("Connection open ...");

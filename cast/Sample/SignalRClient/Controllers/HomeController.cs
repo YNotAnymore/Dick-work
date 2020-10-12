@@ -23,6 +23,11 @@ namespace SignalRClient.Controllers
             return View();
         }
 
+        public IActionResult Demo2()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

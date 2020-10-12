@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Hangfire;
+using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -68,6 +70,11 @@ namespace WebApplication1
 
             }
 
+            services.AddHangfire(config =>
+            {
+                config.UseMemoryStorage();
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,6 +84,9 @@ namespace WebApplication1
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseHangfireServer();
+            app.UseHangfireDashboard("/hangfire");
 
             app.UseRouting();
 

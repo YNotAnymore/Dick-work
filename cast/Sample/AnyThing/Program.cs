@@ -1,23 +1,46 @@
-﻿using Common.CusAttribute;
+﻿using AnyThing.SourceCode;
+using Common.CusAttribute;
+using Common.Extension;
+using Microsoft.DotNet.PlatformAbstractions;
+using Microsoft.EntityFrameworkCore.Storage;
 using Newtonsoft.Json;
 using StackExchange.Redis;
 using System;
+using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Numerics;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml.XPath;
 
 namespace AnyThing
 {
 
-    public class SingleData<T>
+    class MyList : IReadOnlyList<int>
     {
-        public T Data { get; set; }
+        public int this[int index] => throw new NotImplementedException();
+
+        public int Count => throw new NotImplementedException();
+
+        public IEnumerator<int> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
+
 
     [Customer]
     public class Program : IThing
@@ -28,47 +51,145 @@ namespace AnyThing
         {
 
             {
-
-                Dictionary<int, string> dic = new Dictionary<int, string> {
-                    {1,"test" },
-                    {2,"empty" }
-                };
-
-                Console.WriteLine(JsonConvert.SerializeObject(dic));
-
-                var json = @"{ 
-      ""1"": ""房东直租"",
-      ""2"": ""转租"",
-      ""3"": ""招室友"",
-      ""4"": ""公寓出租"",
-      ""5"": ""代理出租""
-    }";
-
-                Dictionary<byte, string> dictionaries = JsonConvert.DeserializeObject<Dictionary<byte, string>>(json);
-
-                Dictionary<byte, string> dictionaries1 = System.Text.Json.JsonSerializer.Deserialize<Dictionary<byte, string>>(json);
-
-                Console.WriteLine(dictionaries);
-
+                (int, int) p = (1, 3);
+                p.Item1 -= 10;
+                Console.WriteLine(p);
 
             }
 
             {
+                //Console.WriteLine();
 
-                var type = typeof(Program);
+                //TextWriter @out = Console.Out;
 
-                type.GetTypeInfo();
+                ////+		_stream	{System.ConsolePal.WindowsConsoleStream}	System.IO.Stream {System.ConsolePal.WindowsConsoleStream}
+                //Console.WriteLine(@out.GetType().FullName);
 
-                if(type is IReflectableType reflectableType)
-                {
-                    Console.WriteLine(reflectableType.GetTypeInfo());
-                }
+            }
+            {
+
+                //foreach (var item in "   1 ".Split(' '))
+                //{
+                //    Console.WriteLine(item.Length);
+                //}
+
+                //Console.WriteLine(HttpUtility.HtmlEncode("<br/><hr><i>123</i>"));
+            }
+
+            {
+
+                //ISet<(int num, int index)> set = new HashSet<(int num, int index)>() {
+                //    { (1,1)} ,
+                //    { (1,1)} ,
+                //};
+
+                //Console.WriteLine(set.Count);
+
+                //Console.WriteLine(JsonConvert.SerializeObject(set));
 
             }
 
-            //TimeSpan timeSpan = TimeSpan.FromMinutes(120);
+            {
+                //for (int j = 0; j < 3; j++)
+                //{
 
-            //Console.WriteLine(timeSpan.ToString(@"hh\:mm"));
+                //    for (int i = 0; i < 26; i++)
+                //    {
+                //        StringBuilder builder = new StringBuilder();
+                //        builder.Append((char)(j + 'a'));
+                //        builder.Append((char)(i + 'a'));
+                //        Console.WriteLine(builder + ":" + builder.ToString().ConvertToNumber());
+                //    }
+                //}
+
+                //Console.WriteLine("zzzzz".ConvertToNumber());
+
+                //Console.WriteLine(12356630.ConvertToLowercase());
+
+                //for (int i = 1; i < 56; i++)
+                //{
+                //    Console.WriteLine($"{i}:{i.ConvertToLowercase()}");
+                //}
+
+            }
+
+            {
+                //decimal v = 94911150 /(decimal) 94911151;
+                //decimal v2 = 94911151 / (decimal)94911152;
+
+                //Console.WriteLine(v == v2);
+            }
+            {
+
+                //Vector2 vector21 = new Vector2();
+
+                //Vector<(double,double)> vector = new Vector<(double, double)>((0.9d, 0.2d));
+                //Vector<(double,double)> vector2= new Vector<(double, double)>((0.9d, 0.2d));
+
+                //Console.WriteLine(vector == vector2);
+
+                //Console.WriteLine(94911150f/ 94911151f); // 1
+
+                //Console.WriteLine(1f/0); // infinity , float/0 => ∞
+
+                //Console.WriteLine(0/2f);
+
+            }
+            {
+
+                //StringBuilder all = new StringBuilder();
+                //for (int i = 1; i < 1000; i++)
+                //{
+                //    StringBuilder builder = new StringBuilder();
+                //    int num = i;
+                //    if(num <= 26)
+                //        builder.Append((char)(((num - 1) % 26) + 'a'));
+                //    else
+                //    {
+                //        builder.Append((char)(((num - 1) % 26) + 'a'));
+                //        while (num >= 26)
+                //        {
+                //            int prev = num;
+                //            num /= 26;
+                //            builder.Insert(0, (char)((num % 26 + (prev % 26 == 0 ? -1 : 0) - 1) + 'a'));
+                //        }
+                //    }
+                //    Console.WriteLine($"{i}-{builder}");
+                //    all.AppendLine($"{i}-{builder}");
+                //}
+                //var str = all.ToString();
+                //Console.WriteLine(str);
+            }
+
+            {
+                //int count = 999;
+                //for (int i = 0; i < 99; i++)
+                //{
+                //    int num = count;
+                //    StringBuilder builder = new StringBuilder();
+
+                //    if(num > 999)
+                //    {
+                //        builder.Append((num - 1) % 999 + 1);
+                //        builder.Append(((num - 1) / 999).ConvertToLowercase());
+                //    }
+                //    else
+                //    {
+                //        builder.Append(num);
+                //    }
+                //    Console.WriteLine(builder);
+                //    count += 999;
+
+                //}
+            }
+
+            { // timespan -> string
+
+                //TimeSpan timeSpan = TimeSpan.FromMinutes(120);
+
+                //Console.WriteLine(timeSpan.ToString(@"hh\:mm"));
+
+            }
 
             //{
 
@@ -92,6 +213,38 @@ namespace AnyThing
 
             await Task.CompletedTask;
 
+        }
+
+        private static void EFExecSqlWithParamter()
+        {
+            { // ef 参数化构建
+
+                //RelationalTypeMappingSource relationalTypeMappingSource = new RelationalTypeMappingSource();
+
+                //RelationalCommandBuilderDependencies dependencies = new RelationalCommandBuilderDependencies(relationalTypeMappingSource);
+
+
+                //var build = new RawSqlCommandBuilder(new RelationalCommandBuilderFactory(dependencies)
+                //    , new RelationalSqlGenerationHelper(new RelationalSqlGenerationHelperDependencies())
+                //    , new ParameterNameGeneratorFactory(new ParameterNameGeneratorDependencies()));
+
+            }
+        }
+
+        private static void TestReflector()
+        {
+            { // 反射测试
+
+                //var type = typeof(Program);
+
+                //type.GetTypeInfo();
+
+                //if(type is IReflectableType reflectableType)
+                //{
+                //    Console.WriteLine(reflectableType.GetTypeInfo());
+                //}
+
+            }
         }
 
         private static void SearchXpath()
@@ -542,7 +695,7 @@ ice,x-conference/x-cooltalk";
 
             Console.WriteLine(connectionMultiplexer.GetType().Name);
 
-            IDatabase database = connectionMultiplexer.GetDatabase();
+            StackExchange.Redis.IDatabase database = connectionMultiplexer.GetDatabase();
 
             Console.WriteLine(database.GetType().Name);
 
