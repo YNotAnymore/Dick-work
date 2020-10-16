@@ -32,6 +32,7 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
 
+
             var key = "Dic";
 
             //{

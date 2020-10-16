@@ -51,9 +51,21 @@ namespace AnyThing
         {
 
             {
-                (int, int) p = (1, 3);
-                p.Item1 -= 10;
-                Console.WriteLine(p);
+
+                string name = "中文翻译出来吃饭啊你在干嘛呢测试";
+
+                Console.WriteLine(name.Length);
+
+                name = "Dgxxhhvhvhvjv5578899999999999999";
+
+                Console.WriteLine(name.Length);
+
+            }
+
+            {
+                //(int, int) p = (1, 3);
+                //p.Item1 -= 10;
+                //Console.WriteLine(p);
 
             }
 
