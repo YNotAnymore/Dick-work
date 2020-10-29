@@ -1,4 +1,5 @@
-﻿using AnyThing.SourceCode;
+﻿using AnyThing.Menu;
+using AnyThing.SourceCode;
 using Common.CusAttribute;
 using Common.Extension;
 using Microsoft.DotNet.PlatformAbstractions;
@@ -16,6 +17,7 @@ using System.Net;
 using System.Numerics;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
@@ -49,27 +51,41 @@ namespace AnyThing
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
-
+            {
+            }
+            {
+                //uint i = 4294967295;
+                //Console.WriteLine(i);
+            }
             {
 
-                string name = "中文翻译出来吃饭啊你在干嘛呢测试";
-
-                Console.WriteLine(name.Length);
-
-                name = "Dgxxhhvhvhvjv5578899999999999999";
-
-                Console.WriteLine(name.Length);
+#if DEBUG
+                Console.WriteLine("debug");
+#endif
 
             }
 
             {
-                //(int, int) p = (1, 3);
-                //p.Item1 -= 10;
-                //Console.WriteLine(p);
+
+                //Levels level = Levels.Default;
+
+                //level.GetType().GetField(level.ToString());
 
             }
 
-            {
+            { // Regex替换
+
+                //string txt = File.ReadAllText(@"C:\Users\win\Desktop\info.txt");
+
+                //txt = Regex.Replace(txt, "[0-9]+.", string.Empty);
+
+                //txt.Replace("。", "。\n");
+
+                //File.WriteAllText(@"C:\Users\win\Desktop\info-format.txt", txt);
+
+            }
+
+            { // 查看console 流定义
                 //Console.WriteLine();
 
                 //TextWriter @out = Console.Out;
@@ -78,17 +94,8 @@ namespace AnyThing
                 //Console.WriteLine(@out.GetType().FullName);
 
             }
-            {
 
-                //foreach (var item in "   1 ".Split(' '))
-                //{
-                //    Console.WriteLine(item.Length);
-                //}
-
-                //Console.WriteLine(HttpUtility.HtmlEncode("<br/><hr><i>123</i>"));
-            }
-
-            {
+            { // 查看元组是否实现hashcode
 
                 //ISet<(int num, int index)> set = new HashSet<(int num, int index)>() {
                 //    { (1,1)} ,
@@ -101,7 +108,7 @@ namespace AnyThing
 
             }
 
-            {
+            { // number To char
                 //for (int j = 0; j < 3; j++)
                 //{
 
@@ -125,13 +132,13 @@ namespace AnyThing
 
             }
 
-            {
+            { // decimal 精确度不足..
                 //decimal v = 94911150 /(decimal) 94911151;
                 //decimal v2 = 94911151 / (decimal)94911152;
 
                 //Console.WriteLine(v == v2);
             }
-            {
+            { // float 存在无穷大/无穷小的概念...
 
                 //Vector2 vector21 = new Vector2();
 
@@ -147,7 +154,7 @@ namespace AnyThing
                 //Console.WriteLine(0/2f);
 
             }
-            {
+            { // number To char
 
                 //StringBuilder all = new StringBuilder();
                 //for (int i = 1; i < 1000; i++)
@@ -173,7 +180,7 @@ namespace AnyThing
                 //Console.WriteLine(str);
             }
 
-            {
+            { // number To char
                 //int count = 999;
                 //for (int i = 0; i < 99; i++)
                 //{
