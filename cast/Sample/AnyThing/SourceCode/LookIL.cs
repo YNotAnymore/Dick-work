@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AnyThing.SourceCode
 {
-
     /// <summary>
     /// @auth : monster
     /// @since : 10/29/2020 6:46:34 PM
@@ -14,6 +14,13 @@ namespace AnyThing.SourceCode
     public class LookIL
     {
 
+        public void Test3(int num)
+        {
+            int a, b;
+            a = b = num;
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+        }
         public void Test()
         {
             var arr = new[] { 1, 2, 3 };
@@ -36,3 +43,4 @@ namespace AnyThing.SourceCode
 
     }
 }
+

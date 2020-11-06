@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameConsoleApp", "FrameConsoleApp\FrameConsoleApp.csproj", "{E2ACC08A-0D04-48A1-8DCC-9B76C7C4C2B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{6EBD110E-76DF-4B80-A5EF-E10FA52C9DFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{6EBD110E-76DF-4B80-A5EF-E10FA52C9DFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwaggerDemoApi", "SwaggerDemoApi\SwaggerDemoApi.csproj", "{6B351A0D-8AB0-483A-8AA0-458DC6491C61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6EBD110E-76DF-4B80-A5EF-E10FA52C9DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EBD110E-76DF-4B80-A5EF-E10FA52C9DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EBD110E-76DF-4B80-A5EF-E10FA52C9DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B351A0D-8AB0-483A-8AA0-458DC6491C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B351A0D-8AB0-483A-8AA0-458DC6491C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B351A0D-8AB0-483A-8AA0-458DC6491C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B351A0D-8AB0-483A-8AA0-458DC6491C61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

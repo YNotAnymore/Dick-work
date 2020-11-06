@@ -1,5 +1,7 @@
 ﻿using AnyThing.Menu;
 using AnyThing.SourceCode;
+using AnyThing.SpeedTest;
+using BenchmarkDotNet.Running;
 using Common.CusAttribute;
 using Common.Extension;
 using Microsoft.DotNet.PlatformAbstractions;
@@ -26,24 +28,6 @@ using System.Xml.XPath;
 namespace AnyThing
 {
 
-    class MyList : IReadOnlyList<int>
-    {
-        public int this[int index] => throw new NotImplementedException();
-
-        public int Count => throw new NotImplementedException();
-
-        public IEnumerator<int> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-
     [Customer]
     public class Program : IThing
     {
@@ -51,10 +35,11 @@ namespace AnyThing
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
-            {
+            {// Benchmark Test
+                BenchmarkDotNet.Reports.Summary summary = BenchmarkRunner.Run<ModulusTest>();
             }
-            {
-                //uint i = 4294967295;
+            {// 查看uint 上限
+                //uint i = 4294967295; 
                 //Console.WriteLine(i);
             }
             {
@@ -221,7 +206,6 @@ namespace AnyThing
             // Benchmark Test
             {
                 //BenchmarkDotNet.Reports.Summary summary = BenchmarkRunner.Run<ForeachTest>();
-
             }
 
             // byte [0~255]
