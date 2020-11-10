@@ -35,8 +35,22 @@ namespace AnyThing
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
+            {
+
+                Type type = typeof(Levels);
+                FieldInfo[] flds = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+
+                for (int i = 0; i < flds.Length; i++)
+                {
+                    dynamic obj = flds[i].GetValue(null);
+
+                    Console.WriteLine(obj.ToString());
+                    Console.WriteLine((int)obj);
+
+                }
+            }
             {// Benchmark Test
-                BenchmarkDotNet.Reports.Summary summary = BenchmarkRunner.Run<ModulusTest>();
+                //BenchmarkDotNet.Reports.Summary summary = BenchmarkRunner.Run<ModulusTest>();
             }
             {// 查看uint 上限
                 //uint i = 4294967295; 

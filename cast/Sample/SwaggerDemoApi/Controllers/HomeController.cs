@@ -47,6 +47,16 @@ namespace SwaggerDemoApi.Controllers
         {
             return req.Level;
         }
+        /// <summary>
+        /// 获取枚举
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        [HttpPost("{level}")]
+        public NewLevel GetMenu(NewLevel level)
+        {
+            return level;
+        }
 
     }
 

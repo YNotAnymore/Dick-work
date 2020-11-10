@@ -12,7 +12,7 @@ namespace AnyThing.Menu
     /// @source : 
     /// @des : 
     /// </summary>
-    public enum Levels : byte // IL ==> uint8
+    public enum Levels2 // default : int32
     {
 
         [Description("默认")]

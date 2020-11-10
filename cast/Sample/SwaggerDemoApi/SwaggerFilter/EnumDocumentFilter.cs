@@ -67,7 +67,8 @@ namespace SwaggerDemoApi.SwaggerFilter
                         Type type = assembly.GetType(item.Key);
 
                         bool flag = type.GetCustomAttribute<SeariesToStringAttribute>() != null;
-                        string desc = flag ? EnumExt.DescribeStrEnum(type) : EnumExt.DescribeIntEnum(type);
+                        //string desc = flag ? EnumExt.DescribeStrEnum(type) : EnumExt.DescribeIntEnum(type);
+                        string desc = EnumExt.DescribeIntEnum(type);
                         Action<OpenApiSchema> action;
                         if (flag)
                         {

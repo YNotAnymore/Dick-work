@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 
 namespace AnyThing.Menu
@@ -8,16 +7,13 @@ namespace AnyThing.Menu
 
     /// <summary>
     /// @auth : monster
-    /// @since : 10/22/2020 5:58:42 PM
+    /// @since : 11/9/2020 10:40:48 AM
     /// @source : 
     /// @des : 
     /// </summary>
-    public enum Levels : byte // IL ==> uint8
+    public enum Level3 : short
     {
-
-        [Description("默认")]
         Default = 1,
         Normal = 2
-
     }
 }
