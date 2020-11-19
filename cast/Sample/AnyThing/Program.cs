@@ -1,9 +1,12 @@
-﻿using AnyThing.Menu;
+﻿using AnyThing.Demo;
+using AnyThing.Menu;
+using AnyThing.Model;
 using AnyThing.SourceCode;
 using AnyThing.SpeedTest;
 using BenchmarkDotNet.Running;
 using Common.CusAttribute;
 using Common.Extension;
+using Common.Tools;
 using Microsoft.DotNet.PlatformAbstractions;
 using Microsoft.EntityFrameworkCore.Storage;
 using Newtonsoft.Json;
@@ -18,6 +21,7 @@ using System.Linq;
 using System.Net;
 using System.Numerics;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -35,19 +39,49 @@ namespace AnyThing
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
+
             {
 
-                Type type = typeof(Levels);
-                FieldInfo[] flds = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+                Dictionary<string, int> dic = new Dictionary<string, int>() {
+                    {"123",2 }
+                };
+            
+            }
 
-                for (int i = 0; i < flds.Length; i++)
-                {
-                    dynamic obj = flds[i].GetValue(null);
+            { // ConcurrentDictionaryDemo
+                //Console.WriteLine(DateTime.Now.ToString("HH:MM:ss:ffff"));
+                //await new ConcurrentDictionaryDemo().Run();
+                //Console.WriteLine(DateTime.Now.ToString("HH:MM:ss:ffff"));
+                //await new ConcurrentDictionaryDemo().Run2();
+                //Console.WriteLine(DateTime.Now.ToString("HH:MM:ss:ffff"));
+            }
+            {// cancellToken 订阅
 
-                    Console.WriteLine(obj.ToString());
-                    Console.WriteLine((int)obj);
+                //CancellationTokenSource cts = new CancellationTokenSource();
 
-                }
+                //cts.Token.Register(() =>
+                //{
+                //    Console.WriteLine("I cancelled");
+                //});
+
+                //Thread.Sleep(1000);
+
+                //cts.Cancel();
+
+            }
+            {
+
+                //Type type = typeof(Levels);
+                //FieldInfo[] flds = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+
+                //for (int i = 0; i < flds.Length; i++)
+                //{
+                //    dynamic obj = flds[i].GetValue(null);
+
+                //    Console.WriteLine(obj.ToString());
+                //    Console.WriteLine((int)obj);
+
+                //}
             }
             {// Benchmark Test
                 //BenchmarkDotNet.Reports.Summary summary = BenchmarkRunner.Run<ModulusTest>();
