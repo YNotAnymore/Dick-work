@@ -15,6 +15,12 @@ namespace AnyThing.SourceCode
     public class LookIL
     {
 
+        public void Test5()
+        {
+            (int num, int num2) p = (1, 2);
+            Console.WriteLine(p);
+        }
+
         public void Test4(int num)
         {
             {

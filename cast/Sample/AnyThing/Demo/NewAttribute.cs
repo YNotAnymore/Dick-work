@@ -44,7 +44,6 @@ namespace AnyThing.Demo
 
         #endregion
 
-
         #region C# 7.0+
 
         // 安全指针

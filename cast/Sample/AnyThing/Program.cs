@@ -39,15 +39,10 @@ namespace AnyThing
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
-
             {
-
-                Dictionary<string, int> dic = new Dictionary<string, int>() {
-                    {"123",2 }
-                };
-            
+                var now = DateTime.Now;
+                DateTime dateTime = now.AddMilliseconds(5);
             }
-
             { // ConcurrentDictionaryDemo
                 //Console.WriteLine(DateTime.Now.ToString("HH:MM:ss:ffff"));
                 //await new ConcurrentDictionaryDemo().Run();
