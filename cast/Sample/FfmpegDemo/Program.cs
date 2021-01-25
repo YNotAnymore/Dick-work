@@ -56,9 +56,31 @@ namespace FfmpegDemo
 
             #region 获取mp3长度
 
-            int duration = FfmpegHelper.GetDurationByffmpeg(@"http://132.232.105.129:8080/uploads/voice/2020/8/31/2443e30d26c74947b515df1967098ada.mp3", path);
+            //int duration = FfmpegHelper.GetDurationByffmpeg(@"http://132.232.105.129:8080/uploads/voice/2020/8/31/2443e30d26c74947b515df1967098ada.mp3", path);
 
-            Console.WriteLine(duration);
+            //Console.WriteLine(duration);
+
+            #endregion
+
+            #region mp3转pcm
+
+            param = "-y -i test.mp3 -acodec pcm_s16le -f s16le -ac 2 -ar 16000 test.pcm";
+
+            res = FfmpegHelper.RunProcessPrintTime(path, param);
+
+            Console.WriteLine(res);
+
+            param = "-y -f s16be -ac 2 -ar 16000 -acodec pcm_s16le -i test.pcm new_mp3.mp3";
+
+            res = FfmpegHelper.RunProcessPrintTime(path, param);
+
+            Console.WriteLine(res);
+
+            param = "-i test.mp3 -f wav test.wav";
+
+            res = FfmpegHelper.RunProcessPrintTime(path, param);
+
+            Console.WriteLine(res);
 
             #endregion
 

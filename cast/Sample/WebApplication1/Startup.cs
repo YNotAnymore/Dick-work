@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Hangfire;
 using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -59,6 +61,12 @@ namespace WebApplication1
             //    Console.WriteLine($"Dictionary<DicItem, string> count : {dictionaries.Count}");
             //}
 
+            { 
+            
+
+            
+            }
+
             {
 
                 IConfigurationSection configurationSection = Configuration.GetSection(key);
@@ -67,7 +75,10 @@ namespace WebApplication1
 
                 Dictionary<DicItem, string> dictionaries = ConfigurationBinder_sc.Get<Dictionary<DicItem, string>>(configurationSection);
 
-                Console.WriteLine(dictionaries.Count);
+                foreach (var item in dictionaries)
+                {
+                    Console.WriteLine($"{item.Key}:{item.Value}");
+                }
 
             }
 
@@ -90,6 +101,19 @@ namespace WebApplication1
             app.UseHangfireDashboard("/hangfire");
 
             app.UseRouting();
+
+
+            app.Run(context =>
+            {
+                IHttpMaxRequestBodySizeFeature httpMaxRequestBodySizeFeature = context.Features.Get<IHttpMaxRequestBodySizeFeature>();
+
+                Console.WriteLine(httpMaxRequestBodySizeFeature.IsReadOnly);
+                Console.WriteLine(httpMaxRequestBodySizeFeature.MaxRequestBodySize);
+
+                Console.WriteLine(httpMaxRequestBodySizeFeature.GetType().FullName);
+
+                return Task.CompletedTask;
+            });
 
             app.UseEndpoints(endpoints =>
             {

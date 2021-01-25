@@ -23,6 +23,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -36,12 +37,37 @@ namespace AnyThing
     public class Program : IThing
     {
 
+        public class VoiceInfo
+        {
+            /// <summary>
+            /// 音频地址
+            /// </summary>
+            public string Url { get; set; }
+
+            /// <summary>
+            /// 时长(秒)
+            /// </summary>
+            public int Duration { get; set; }
+
+        }
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
+
+            GetMethodInterface.Run();
+            //Console.WriteLine(Guid.NewGuid().ToString());
             {
-                var now = DateTime.Now;
-                DateTime dateTime = now.AddMilliseconds(5);
+
+                //Type type = typeof(Levels?);
+                //Console.WriteLine($"{type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>) && type.GetGenericArguments()[0].IsEnum}");
+            }
+
+            {
+                //VoiceInfo voiceInfo = System.Text.Json.JsonSerializer.Deserialize<VoiceInfo>("{\"url\":\"uploads/voice/2020/12/18/097fb646bf374ebe93c9b9e301d07cf3.mp3\",\"duration\":12}", new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+            }
+            {
+                //var now = DateTime.Now;
+                //DateTime dateTime = now.AddMilliseconds(5);
             }
             { // ConcurrentDictionaryDemo
                 //Console.WriteLine(DateTime.Now.ToString("HH:MM:ss:ffff"));
