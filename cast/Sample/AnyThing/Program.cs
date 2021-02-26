@@ -54,7 +54,61 @@ namespace AnyThing
         static async Task Main(string[] args)
         {
 
-            GetMethodInterface.Run();
+            /*
+             * 
+             * base = skill, 体现: 解决问题的能力
+             * 
+             * 
+             * 
+             */
+
+            #region redis 
+            {
+
+                var _redis = ConnectionMultiplexer.Connect("localhost,allowAdmin=true,abortConnect=false,connectTimeout=2000");
+                StackExchange.Redis.IDatabase database = _redis.GetDatabase();
+
+                { // hashSet
+                    //var key = "hashset.userId.to.teamId";
+
+                    //{ // 添加数据
+                    //    HashEntry[] entries = new HashEntry[1000_00];
+
+                    //    Parallel.For(0, entries.Length, index =>
+                    //    {
+                    //        entries[index] = new HashEntry(Guid.NewGuid().ToString("N"), Guid.NewGuid().ToString("N"));
+                    //    });
+
+                    //    await database.HashSetAsync(key, entries);
+                    //}
+
+                    //Console.WriteLine(await database.HashLengthAsync(key));
+
+                    //{ // 输出数据
+                    //    RedisValue[] keys = await database.HashKeysAsync(key);
+
+                    //    Parallel.ForEach(keys, async item =>
+                    //    {
+                    //        RedisValue redisValue = await database.HashGetAsync(key, item);
+
+                    //        if(redisValue.HasValue)
+                    //            Console.WriteLine($"{item}-{redisValue}");
+                    //        else
+                    //        {
+
+                    //        }    
+
+                    //    });
+
+                    //}
+
+                    //await database.KeyDeleteAsync(key);
+                }
+
+            }
+            #endregion
+
+            //GetMethodInterface.Run();
             //Console.WriteLine(Guid.NewGuid().ToString());
             {
 
