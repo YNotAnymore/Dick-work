@@ -1,4 +1,5 @@
 ﻿using AnyThing.Demo;
+using AnyThing.Demo.DictionarySc;
 using AnyThing.Menu;
 using AnyThing.Model;
 using AnyThing.SourceCode;
@@ -16,6 +17,8 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -32,6 +35,38 @@ using System.Xml.XPath;
 
 namespace AnyThing
 {
+
+    public class Empty<T> where T : new()
+    {
+        public static T Default { get; } = new T();
+    }
+
+    public class Info
+    {
+        public Info()
+        {
+            Console.WriteLine("创建了一个Info");
+        }
+    }
+
+    public class IntCompare : IEqualityComparer<int?>
+    {
+
+        public bool Equals(int? x, int? y)
+        {
+            if (x.HasValue && y.HasValue)
+            {
+                return x.Value == y.Value && x.Value != 1;
+            }
+            return x.HasValue == y.HasValue;
+        }
+
+        public int GetHashCode([DisallowNull] int? obj)
+        {
+            return obj.HasValue ? obj.Value : -1;
+        }
+
+    }
 
     [Customer]
     public class Program : IThing
@@ -54,6 +89,23 @@ namespace AnyThing
         static async Task Main(string[] args)
         {
 
+            object nu = null;
+
+            Debug.Assert(nu != null);
+
+            //Dictionary<int, int> dic = new Dictionary<int, int>();
+            //AnyThing.Demo.DictionarySc.DictionarySc<int?, int> dic = new Demo.DictionarySc.DictionarySc<int?, int>(0, new IntCompare());
+            DictionarySc<int?, int> dic = new DictionarySc<int?, int>(0, null);
+
+            dic.Add(1, 2);
+            //dic.Add(1, 4);
+            //dic.Add(1, 5);
+            dic.Add(2, 2);
+            dic.Add(3, 2);
+            dic.Add(4, 2);
+            dic.Add(5, 2);
+
+
             /*
              * 
              * base = skill, 体现: 解决问题的能力
@@ -61,6 +113,34 @@ namespace AnyThing
              * 
              * 
              */
+
+            #region nothing
+            {
+
+                //var json = "{\"Distance\":1000,\"MatchRent\":true,\"Empty\":false}";
+
+                ////new Dictionary<string, object>(collection: JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(extend.Jsonparam)
+                ////    .Select(d => new KeyValuePair<string, object>(d.Key, GetCLRType(d.Value))));
+
+                ////Dictionary<string, JsonElement> dic = JsonConvert.DeserializeObject<Dictionary<string, JsonElement>>(json);
+                //Dictionary<string, object> dic2 = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
+
+                //foreach (var item in dic2)
+                //{
+                //    Console.WriteLine(item.Value.GetType().FullName);
+                //}
+
+                //Dictionary<string, JsonElement> dic3 = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json);
+
+                //foreach (var item in dic3)
+                //{
+                //    var value = item.Value.ValueKind;
+                //    Console.WriteLine(item.Value.GetType().FullName);
+                //}
+
+
+            }
+            #endregion
 
             #region redis 
             {
