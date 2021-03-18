@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SwaggerDemoApi.Extension;
 using SwaggerDemoApi.Menu;
+using System.ComponentModel.DataAnnotations;
 
 namespace SwaggerDemoApi.Controllers
 {
@@ -11,6 +12,12 @@ namespace SwaggerDemoApi.Controllers
     [Route("[controller]")]
     public class HomeController : ControllerBase
     {
+
+        [HttpPost("validReq")]
+        public string validReq([FromBody]InfoReq req)
+        {
+            return "ok";
+        }
 
         /// <summary>
         /// 获取枚举
@@ -58,6 +65,15 @@ namespace SwaggerDemoApi.Controllers
             return level;
         }
 
+    }
+
+    public class InfoReq
+    {
+        [Required]
+        public string Name { get; set; }
+        [StringLength(0, ErrorMessage = "文字太长了")]
+        [Required]
+        public string Id { get; set; }
     }
 
     public class NewMenuReq

@@ -72,6 +72,12 @@ namespace AnyThing
     public class Program : IThing
     {
 
+        struct Info
+        {
+            public int Num { get; set; }
+            public object obj { get; set; }
+        }
+
         public class VoiceInfo
         {
             /// <summary>
@@ -89,22 +95,56 @@ namespace AnyThing
         static async Task Main(string[] args)
         {
 
-            object nu = null;
+            #region struct
+            {
+                //Info info = new Program.Info();
+                //info.Num = 88;
+                //Console.WriteLine(info.Num); // 88
 
-            Debug.Assert(nu != null);
+                //info.obj = new Program();
 
-            //Dictionary<int, int> dic = new Dictionary<int, int>();
-            //AnyThing.Demo.DictionarySc.DictionarySc<int?, int> dic = new Demo.DictionarySc.DictionarySc<int?, int>(0, new IntCompare());
-            DictionarySc<int?, int> dic = new DictionarySc<int?, int>(0, null);
+                //Info copy = info;
+                //copy.Num = 22;
+                //Console.WriteLine(info.Num); // 88
+                //Console.WriteLine(copy.Num);
 
-            dic.Add(1, 2);
-            //dic.Add(1, 4);
-            //dic.Add(1, 5);
-            dic.Add(2, 2);
-            dic.Add(3, 2);
-            dic.Add(4, 2);
-            dic.Add(5, 2);
 
+                //copy.obj = new Data();
+                //Console.WriteLine(info.obj);  // Program
+            }
+            #endregion
+
+            #region Assert
+            {
+
+                //object nu = null;
+
+                //Debug.Assert(nu != null);
+            }
+            #endregion
+
+            #region Dictionary
+            {
+                ////Dictionary<int, int> dic = new Dictionary<int, int>();
+                //AnyThing.Demo.DictionarySc.DictionarySc<int?, int> dic = new Demo.DictionarySc.DictionarySc<int?, int>(0, new IntCompare());
+                DictionarySc<int?, int> dic = new DictionarySc<int?, int>(0, null);
+
+                dic.Add(1, 2);
+                //dic.Add(1, 4);
+                //dic.Add(1, 5);
+                dic.Add(8, 2);
+                dic.Add(15, 2);
+                dic.Add(22, 2);
+                dic.Add(29, 2);
+
+                dic.Remove(8);
+                dic.Remove(15);
+
+                dic.Add(36, 2);
+                dic.Add(43, 2);
+
+            }
+            #endregion
 
             /*
              * 

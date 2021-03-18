@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -48,6 +49,24 @@ namespace SwaggerDemoApi
                        new JsonStringEnumConverter(JsonNamingPolicy.CamelCase), typeof(SeariesToStringAttribute)));
 
                });
+
+            services.Configure<ApiBehaviorOptions>(options => {
+                options.InvalidModelStateResponseFactory = context =>
+                {
+
+                    StringBuilder stringBuilder = new StringBuilder();
+
+                    foreach (var item in context.ModelState.Values)
+                    {
+                        foreach (var sub in item.Errors)
+                        {
+                            stringBuilder.Append($"{sub.ErrorMessage}<br>");
+                        }
+                    }
+
+                    return new JsonResult(stringBuilder.ToString());
+                };
+            });
 
             {// ×¢²áswagger
 
