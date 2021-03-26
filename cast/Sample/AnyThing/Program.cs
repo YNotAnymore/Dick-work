@@ -68,6 +68,17 @@ namespace AnyThing
 
     }
 
+    enum Empty2
+    {
+        Test = 0
+    }
+
+    enum Empty
+    {
+        Normal = 0,
+        Test = 1
+    }
+
     [Customer]
     public class Program : IThing
     {
@@ -94,6 +105,8 @@ namespace AnyThing
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
+
+            Console.WriteLine((Empty)Empty2.Test); // Normal 通过值转换
 
             #region struct
             {
@@ -127,21 +140,21 @@ namespace AnyThing
             {
                 ////Dictionary<int, int> dic = new Dictionary<int, int>();
                 //AnyThing.Demo.DictionarySc.DictionarySc<int?, int> dic = new Demo.DictionarySc.DictionarySc<int?, int>(0, new IntCompare());
-                DictionarySc<int?, int> dic = new DictionarySc<int?, int>(0, null);
+                //DictionarySc<int?, int> dic = new DictionarySc<int?, int>(0, null);
 
-                dic.Add(1, 2);
-                //dic.Add(1, 4);
-                //dic.Add(1, 5);
-                dic.Add(8, 2);
-                dic.Add(15, 2);
-                dic.Add(22, 2);
-                dic.Add(29, 2);
+                //dic.Add(1, 2);
+                ////dic.Add(1, 4);
+                ////dic.Add(1, 5);
+                //dic.Add(8, 2);
+                //dic.Add(15, 2);
+                //dic.Add(22, 2);
+                //dic.Add(29, 2);
 
-                dic.Remove(8);
-                dic.Remove(15);
+                //dic.Remove(8);
+                //dic.Remove(15);
 
-                dic.Add(36, 2);
-                dic.Add(43, 2);
+                //dic.Add(36, 2);
+                //dic.Add(43, 2);
 
             }
             #endregion
