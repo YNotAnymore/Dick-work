@@ -172,8 +172,6 @@ namespace SignalR.SocketClientDemo.Utils
         {
             while (client.State == WebSocketState.Open)
             {
-                await Task.Delay(millisecondsDelay);
-
                 if (getSendCountFunc == null)
                 {
                     await SendTxtMsgAsync(client, sessionId, getContentFunc);
@@ -188,6 +186,8 @@ namespace SignalR.SocketClientDemo.Utils
                     }
 
                 }
+                await Task.Delay(millisecondsDelay);
+
             }
         }
 

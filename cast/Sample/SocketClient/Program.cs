@@ -29,20 +29,20 @@ namespace SignalR.SocketClientDemo
             Console.WriteLine("请输入服务端域名：");
 
             CommonConst.DomainName = Console.ReadLine().Trim();
+            //CommonConst.DomainName = "";
 
             //await clientWebSocket.SendTxtMsgAsync();
 
             Random random = new Random();
 
-            //_ = StartClient("17078539106", "b2228fff7fee459b99ae0c67d8caf117", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)], () => random.Next(4) + 1);
-            //_ = StartClient("17078539100", "d1df1fd71fae48409fa676421ed8c62e", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)], () =>
-            //random.Next(4) +
-            //1);
+            //_ = StartClient("17078539106", "b2228fff7fee459b99ae0c67d8caf117", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
+            //_ = StartClient("17078539100", "d1df1fd71fae48409fa676421ed8c62e", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
+            _ = StartClient("17078539108", "127f5c4fc56a4759ad3fae6a092414c1", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
+            //_ = StartClient("17078539147", "4a11b51e42084ff48cd2ff4abd60f6ae", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
             //_ = StartClient("17078539095", "d4317553c0434642b5d9360dd6a56a98", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-            //_ = StartClient("17078539108", "127f5c4fc56a4759ad3fae6a092414c1", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
             //_ = StartClient("17078539116", "a8d5c41fac5045e7847f870ef37b012a", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
             //_ = StartClient("17078539099", "3b9f7940632e43fa8a91a0b926b36706", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-            _ = StartClient("17078539125", "c892625131dc4e2e9f48134821ab604b", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
+            //_ = StartClient("17078539125", "c892625131dc4e2e9f48134821ab604b", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
 
             Console.WriteLine("Hello World!");
 
@@ -70,7 +70,7 @@ namespace SignalR.SocketClientDemo
 
             _ = clientWebSocket.SubscribeAsync(100);
 
-            _ = clientWebSocket.WhileSendTxtMsgAsync(15 * 1000, sessionId, getContentFunc, getSendCountFunc);
+            _ = clientWebSocket.WhileSendTxtMsgAsync(10 * 1000, sessionId, getContentFunc, getSendCountFunc);
         }
 
     }

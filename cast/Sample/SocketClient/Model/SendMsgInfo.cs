@@ -12,8 +12,29 @@ namespace SignalR.SocketClientDemo.Model
     /// @source : 
     /// @des : 发送参数
     /// </summary>
-    public class SendMsgInfo : MsgInfo
+    public class SendMsgInfo
     {
+
+        /// <summary>
+        /// 参数
+        /// </summary>
+        public object[] Arguments { get; set; }
+        /// <summary>
+        /// 消息的唯一id
+        /// </summary>
+        public string InvocationId { get; set; }
+        /// <summary>
+        /// 调用目标
+        /// </summary>
+        public string Target { get; set; }
+        /// <summary>
+        /// 消息类型
+        /// </summary>
+        public MsgType Type { get; set; }
+        /// <summary>
+        /// 异步流id
+        /// </summary>
+        public string[] StreamIds { get; set; }
         /// <summary>
         /// 构建一个invoke消息
         /// </summary>
