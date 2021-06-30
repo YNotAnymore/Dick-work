@@ -54,7 +54,7 @@ namespace SignalR.SocketClientDemo
 
                 Dictionary<string, List<string>> dictionary = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(phoneMapSessions);
 
-                Console.WriteLine($"次数连接数：{dictionary.Count}");
+                Console.WriteLine($"连接次数：{dictionary.Count}");
 
                 //for (int i = 0; i < 5; i++)
                 {
