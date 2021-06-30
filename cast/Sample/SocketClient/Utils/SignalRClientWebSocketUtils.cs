@@ -41,7 +41,7 @@ namespace SignalR.SocketClientDemo.Utils
             return client.SendAsync(Encoding.UTF8.GetBytes(msg), WebSocketMessageType.Binary, false, CancellationToken.None);
         }
 
-        public static async Task SubscribeAsync(this ClientWebSocket client, int millisecondsDelay)
+        public static async Task SubscribeAsync(this ClientWebSocket client, int millisecondsDelay,string flag = "")
         {
             try
             {
@@ -62,7 +62,8 @@ namespace SignalR.SocketClientDemo.Utils
         {
             while (client.State == WebSocketState.Open)
             {
-                var result = new byte[1024];
+                // 太小会接收消息不全...
+                var result = new byte[10240];
 
                 await client.ReceiveAsync(new ArraySegment<byte>(result), new CancellationToken());// 接收数据
 
@@ -70,12 +71,22 @@ namespace SignalR.SocketClientDemo.Utils
 
                 var str = Encoding.UTF8.GetString(lastbyte, 0, lastbyte.Length);
 
+                Console.WriteLine($"接收到消息（无处理）：{str}");
+
                 string[] noticeArr = str.Split(CommonConst.EndCode);
 
                 foreach (var item in noticeArr)
                 {
                     if (string.IsNullOrEmpty(item)) continue;
-                    MsgInfo msgInfo = JsonConvert.DeserializeObject<MsgInfo>(item);
+                    MsgInfo msgInfo = null;
+                    try
+                    {
+                        msgInfo = JsonConvert.DeserializeObject<MsgInfo>(item);
+                    }
+                    catch (Exception e)
+                    {
+                        throw;
+                    }
 
                     if (msgInfo.Type == MsgType.Heartbeat) // 回复心跳
                     {
@@ -121,7 +132,7 @@ namespace SignalR.SocketClientDemo.Utils
                 await Task.Delay(millisecondsDelay);
             }
 
-            Console.WriteLine("连接终止了");
+            Console.WriteLine("连接已终止");
 
         }
 
