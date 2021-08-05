@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwaggerDemoApi", "SwaggerDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpFindCity", "IpFindCity\IpFindCity.csproj", "{CC694448-73E7-41C0-BE2C-68E76994BC50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.SocketClientDemo", "SocketClient\SignalR.SocketClientDemo.csproj", "{F8BA9A73-9BD1-41A2-AC15-15E8C71E862F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalR.SocketClientDemo", "SocketClient\SignalR.SocketClientDemo.csproj", "{F8BA9A73-9BD1-41A2-AC15-15E8C71E862F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireDemo", "HangfireDemo\HangfireDemo.csproj", "{58245560-9591-47FF-B6A9-5FE41730321B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{F8BA9A73-9BD1-41A2-AC15-15E8C71E862F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8BA9A73-9BD1-41A2-AC15-15E8C71E862F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8BA9A73-9BD1-41A2-AC15-15E8C71E862F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58245560-9591-47FF-B6A9-5FE41730321B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58245560-9591-47FF-B6A9-5FE41730321B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58245560-9591-47FF-B6A9-5FE41730321B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58245560-9591-47FF-B6A9-5FE41730321B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

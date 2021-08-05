@@ -12,7 +12,7 @@ namespace Common.Extension
         /// </summary>  
         /// <param name="timeStamp"></param>  
         /// <returns></returns>  
-        public static DateTime GetDateTime(this int timeStamp)
+        public static DateTime GetDateTime(this long timeStamp)
         {
             DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
             long lTime = ((long)timeStamp * 10000000);

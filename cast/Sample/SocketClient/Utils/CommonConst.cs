@@ -15,7 +15,8 @@ namespace SignalR.SocketClientDemo.Utils
     public class CommonConst
     {
         public static string DomainName = "xxx";
-        public static string BaseUrl => $"https://{DomainName}";
+        public static bool IsHttps = true;
+        public static string BaseUrl => $"http{(IsHttps ? "s" : "")}://{DomainName}";
         public const string EndCode = "";
 
     }

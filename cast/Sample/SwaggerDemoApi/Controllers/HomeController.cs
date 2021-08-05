@@ -1,10 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SwaggerDemoApi.Extension;
 using SwaggerDemoApi.Menu;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace SwaggerDemoApi.Controllers
 {
+
+    public class Req
+    {
+        public Guid Id { get; set; }
+    }
+
     /// <summary>
     /// Main api
     /// </summary>
@@ -12,6 +19,17 @@ namespace SwaggerDemoApi.Controllers
     [Route("[controller]")]
     public class HomeController : ControllerBase
     {
+        [HttpGet("show/guid")]
+        public Guid TestGuid(Guid id)
+        {
+            return id;
+        }
+
+        [HttpPost("show/guid")]
+        public Guid TestShowGuid([FromBody] Req req)
+        {
+            return req.Id;
+        }
 
         [HttpPost("validReq")]
         public string validReq([FromBody]InfoReq req)

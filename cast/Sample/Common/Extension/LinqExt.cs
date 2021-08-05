@@ -30,6 +30,38 @@ namespace UA.Core.Infrastructure.Extension
                 return where.AndAlso(GetWhereExpression<T>(methodCallExpression));
             return where;
         }
+
+        /// <summary>
+        /// 获取排序表达式
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <param name="propName">属性名（支持一级）</param>
+        /// <param name="orderArr">对应的排序值，下标表示排序值</param>
+        /// <param name="defaultOrder">默认排序值</param>
+        /// <returns></returns>
+        public static Expression<Func<T, int>> GetOrderExpression<T, T2>(string propName, T2[] orderArr, int defaultOrder = int.MaxValue)
+        {
+            ParameterExpression parameterExpression = Expression.Parameter(typeof(T));
+
+            MemberExpression memberExpression = Expression.Property(parameterExpression, propName);
+
+            Expression elseExpression = Expression.Constant(defaultOrder);
+
+            for (int i = 0; i < orderArr.Length; i++)
+            {
+                var t = orderArr[i];
+                var orderNum = i;
+                elseExpression = Expression.Condition(
+                          Expression.Equal(memberExpression, Expression.Constant(t))
+                          , Expression.Constant(orderNum)
+                          , elseExpression
+                      );
+
+            }
+            return Expression.Lambda<Func<T, int>>(elseExpression, parameterExpression);
+        }
+
         #endregion
 
         #region left join

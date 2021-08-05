@@ -25,46 +25,57 @@ namespace SignalR.SocketClientDemo
          * SignalR websocket 客户端示例
          */
 
+        static Random random = new Random();
+        static string GetRandContent()
+        {
+            var txt = LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)];
+
+            txt = txt.Replace("\"", string.Empty)
+                .Replace("，", string.Empty)
+                .Replace("！", string.Empty)
+                .Replace(",", string.Empty)
+                .Replace("。", string.Empty);
+
+            var len = Math.Min(random.Next(4) + 2, txt.Length);
+            var start = random.Next(txt.Length - len);
+            var randName = txt.Substring(start, len);
+            return randName;
+
+        }
+
         static async Task Main(string[] args)
         {
 
             Console.WriteLine("请输入服务端域名：");
 
             //CommonConst.DomainName = Console.ReadLine().Trim();
-            CommonConst.DomainName = "";
+            //CommonConst.DomainName = File.ReadAllText(@"F:\Davis\Data\test\txt\site.txt");
+            CommonConst.DomainName = "192.168.0.118:5000";
+            CommonConst.IsHttps = false;
 
             //await clientWebSocket.SendTxtMsgAsync();
 
-            Random random = new Random();
             { // 单会话发送
-
-                //_ = StartClient("17078539106", "b2228fff7fee459b99ae0c67d8caf117", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-                //_ = StartClient("17078539100", "d1df1fd71fae48409fa676421ed8c62e", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-                //_ = StartClient("17078539108", "127f5c4fc56a4759ad3fae6a092414c1", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-                //_ = StartClient("17078539147", "4a11b51e42084ff48cd2ff4abd60f6ae", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-                //_ = StartClient("17078539095", "d4317553c0434642b5d9360dd6a56a98", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-                //_ = StartClient("17078539116", "a8d5c41fac5045e7847f870ef37b012a", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-                //_ = StartClient("17078539099", "3b9f7940632e43fa8a91a0b926b36706", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-                //_ = StartClient("17078539125", "c892625131dc4e2e9f48134821ab604b", () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-
+                _ = StartClient("17078539173", "a0b6eb7a79fc4d8384bcaf9350d3367d", GetRandContent);
+                //_ = StartClient("17078539163", "a0b6eb7a79fc4d8384bcaf9350d3367d", GetRandContent);
             }
-            { // 多会话发送
+            //{ // 多会话发送
 
-                var phoneMapSessions = File.ReadAllText(@"F:\Davis\Data\test\phoneMapSessions.txt");
+            //    var phoneMapSessions = File.ReadAllText(@"F:\Davis\Data\test\phoneMapSessions.txt");
 
-                Dictionary<string, List<string>> dictionary = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(phoneMapSessions);
+            //    Dictionary<string, List<string>> dictionary = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(phoneMapSessions);
 
-                Console.WriteLine($"连接次数：{dictionary.Count}");
+            //    Console.WriteLine($"连接次数：{dictionary.Count}");
 
-                //for (int i = 0; i < 5; i++)
-                {
-                    foreach (var item in dictionary)
-                    {
-                        _ = StartClient(item.Key, item.Value, () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
-                    }
-                }
+            //    //for (int i = 0; i < 5; i++)
+            //    {
+            //        foreach (var item in dictionary)
+            //        {
+            //            _ = StartClient(item.Key, item.Value, () => LargeData.LargetArr[random.Next(LargeData.LargetArr.Length)]);
+            //        }
+            //    }
 
-            }
+            //}
             Console.WriteLine("Hello World!");
 
             Console.ReadKey(true);
@@ -89,7 +100,7 @@ namespace SignalR.SocketClientDemo
 
             ClientWebSocket clientWebSocket = new ClientWebSocket();
 
-            await clientWebSocket.ConnectAsync(new Uri($"wss://{CommonConst.DomainName}/msgapi/chatHub?id={commonRes1.Res}&access_token={commonRes.Res}"), CancellationToken.None);
+            await clientWebSocket.ConnectAsync(new Uri($"ws{(CommonConst.IsHttps ? "s" : "")}://{CommonConst.DomainName}/msgapi/chatHub?id={commonRes1.Res}&access_token={commonRes.Res}"), CancellationToken.None);
 
             Console.WriteLine("连接socket成功");
 
@@ -99,35 +110,42 @@ namespace SignalR.SocketClientDemo
 
             _ = clientWebSocket.SubscribeAsync(100, $"{phone}-{sessionIds}");
 
-            foreach (var sessionId in sessionIds)
-            {
-                _ = clientWebSocket.WhileSendTxtMsgAsync(10 * 1000, sessionId, getContentFunc, getSendCountFunc);
-            }
+            //foreach (var sessionId in sessionIds)
+            //{
+            //    _ = clientWebSocket.WhileSendTxtMsgAsync(10 * 1000, sessionId, getContentFunc, getSendCountFunc);
+            //}
         }
 
 
         private static async Task StartClient(string phone, string sessionId, Func<string> getContentFunc, Func<int> getSendCountFunc = null)
         {
+            try
+            {
+                HttpClient client = new HttpClient();
 
-            HttpClient client = new HttpClient();
+                CommonRes commonRes = await AuthUtils.GetToken(client, phone);
 
-            CommonRes commonRes = await AuthUtils.GetToken(client, phone);
+                if (!commonRes.Success) return;
 
-            if (!commonRes.Success) return;
+                CommonRes commonRes1 = await AuthUtils.GetConnectionToken(client, commonRes.Res);
 
-            CommonRes commonRes1 = await AuthUtils.GetConnectionToken(client, commonRes.Res);
+                if (!commonRes1.Success) return;
 
-            if (!commonRes1.Success) return;
+                ClientWebSocket clientWebSocket = new ClientWebSocket();
 
-            ClientWebSocket clientWebSocket = new ClientWebSocket();
+                await clientWebSocket.ConnectAsync(new Uri($"ws{(CommonConst.IsHttps ? "s" : "")}://{CommonConst.DomainName}/msgapi/chatHub?id={commonRes1.Res}&access_token={commonRes.Res}"), CancellationToken.None);
 
-            await clientWebSocket.ConnectAsync(new Uri($"wss://{CommonConst.DomainName}/msgapi/chatHub?id={commonRes1.Res}&access_token={commonRes.Res}"), CancellationToken.None);
+                await clientWebSocket.SendInitAsync();
 
-            await clientWebSocket.SendInitAsync();
+                _ = clientWebSocket.SubscribeAsync(100);
 
-            _ = clientWebSocket.SubscribeAsync(100);
+                //_ = clientWebSocket.WhileSendTxtMsgAsync(5 * 1000, sessionId, getContentFunc, getSendCountFunc);
+            }
+            catch (Exception e)
+            {
 
-            _ = clientWebSocket.WhileSendTxtMsgAsync(10 * 1000, sessionId, getContentFunc, getSendCountFunc);
+                throw;
+            }
         }
 
     }

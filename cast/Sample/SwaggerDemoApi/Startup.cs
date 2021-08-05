@@ -23,6 +23,35 @@ using SwaggerDemoApi.SwaggerFilter;
 
 namespace SwaggerDemoApi
 {
+
+    public class GuidConverter : JsonConverter<Guid>
+    {
+
+        public override Guid Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string str = reader.GetString();
+            if (string.IsNullOrWhiteSpace(str)) return default;
+            if (Guid.TryParse(str, out var guid))
+            {
+                return guid;
+            }
+            else
+            {
+                return default;
+            }
+        }
+
+        public override void Write(Utf8JsonWriter writer, Guid value, JsonSerializerOptions options)
+        {
+            if (value == default)
+            {
+                writer.WriteNullValue();
+                return;
+            }
+            writer.WriteStringValue(value.ToString("N"));
+        }
+    }
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -48,9 +77,12 @@ namespace SwaggerDemoApi
                    options.JsonSerializerOptions.Converters.Add(new OptionalJsonConvertFactory(
                        new JsonStringEnumConverter(JsonNamingPolicy.CamelCase), typeof(SeariesToStringAttribute)));
 
+                   options.JsonSerializerOptions.Converters.Add(new GuidConverter());
+
                });
 
-            services.Configure<ApiBehaviorOptions>(options => {
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
                 options.InvalidModelStateResponseFactory = context =>
                 {
 

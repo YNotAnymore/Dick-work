@@ -102,9 +102,21 @@ namespace AnyThing
             public int Duration { get; set; }
 
         }
+
+        public class ITest<T>
+        {
+            public void Show()
+            {
+                Console.WriteLine(typeof(T));
+            }
+        }
+
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
+
+            Program p = null;
+            var str = System.Text.Json.JsonSerializer.Serialize(p);
 
             Console.WriteLine((Empty)Empty2.Test); // Normal 通过值转换
 
