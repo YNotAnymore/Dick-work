@@ -1,9 +1,12 @@
 ﻿using AnyThing.Demo;
 using AnyThing.Demo.DictionarySc;
+using AnyThing.JsonSerie;
 using AnyThing.Menu;
 using AnyThing.Model;
+using AnyThing.NpoiModule;
 using AnyThing.SourceCode;
 using AnyThing.SpeedTest;
+using Aspose.Words;
 using BenchmarkDotNet.Running;
 using Common.CusAttribute;
 using Common.Extension;
@@ -11,6 +14,9 @@ using Common.Tools;
 using Microsoft.DotNet.PlatformAbstractions;
 using Microsoft.EntityFrameworkCore.Storage;
 using Newtonsoft.Json;
+using NPOI.XSSF.Streaming;
+using NPOI.XSSF.UserModel;
+using NPOI.XWPF.UserModel;
 using StackExchange.Redis;
 using System;
 using System.Collections;
@@ -36,84 +42,15 @@ using System.Xml.XPath;
 namespace AnyThing
 {
 
-    public class Empty<T> where T : new()
-    {
-        public static T Default { get; } = new T();
-    }
-
-    public class Info
-    {
-        public Info()
-        {
-            Console.WriteLine("创建了一个Info");
-        }
-    }
-
-    public class IntCompare : IEqualityComparer<int?>
-    {
-
-        public bool Equals(int? x, int? y)
-        {
-            if (x.HasValue && y.HasValue)
-            {
-                return x.Value == y.Value && x.Value != 1;
-            }
-            return x.HasValue == y.HasValue;
-        }
-
-        public int GetHashCode([DisallowNull] int? obj)
-        {
-            return obj.HasValue ? obj.Value : -1;
-        }
-
-    }
-
-    enum Empty2
-    {
-        Test = 0
-    }
-
-    enum Empty
-    {
-        Normal = 0,
-        Test = 1
-    }
-
     [Customer]
     public class Program : IThing
     {
 
-        struct Info
-        {
-            public int Num { get; set; }
-            public object obj { get; set; }
-        }
-
-        public class VoiceInfo
-        {
-            /// <summary>
-            /// 音频地址
-            /// </summary>
-            public string Url { get; set; }
-
-            /// <summary>
-            /// 时长(秒)
-            /// </summary>
-            public int Duration { get; set; }
-
-        }
-
-        public class ITest<T>
-        {
-            public void Show()
-            {
-                Console.WriteLine(typeof(T));
-            }
-        }
-
         [return: Customer, Description]
         static async Task Main(string[] args)
         {
+
+            NpoiDemo.Run();
 
             Program p = null;
             var str = System.Text.Json.JsonSerializer.Serialize(p);
@@ -484,6 +421,34 @@ namespace AnyThing
 
             await Task.CompletedTask;
 
+        }
+
+        struct Info
+        {
+            public int Num { get; set; }
+            public object obj { get; set; }
+        }
+
+        public class VoiceInfo
+        {
+            /// <summary>
+            /// 音频地址
+            /// </summary>
+            public string Url { get; set; }
+
+            /// <summary>
+            /// 时长(秒)
+            /// </summary>
+            public int Duration { get; set; }
+
+        }
+
+        public class ITest<T>
+        {
+            public void Show()
+            {
+                Console.WriteLine(typeof(T));
+            }
         }
 
         private static void EFExecSqlWithParamter()
@@ -1035,6 +1000,52 @@ ice,x-conference/x-cooltalk";
             Console.WriteLine(str);
         }
 
+    }
+
+
+    public abstract class Tets : Empty<int> { }// 卧槽，还真可以...
+
+    public class Empty<T> where T : new()
+    {
+        public static T Default { get; } = new T();
+    }
+
+    public class Info
+    {
+        public Info()
+        {
+            Console.WriteLine("创建了一个Info");
+        }
+    }
+
+    public class IntCompare : IEqualityComparer<int?>
+    {
+
+        public bool Equals(int? x, int? y)
+        {
+            if (x.HasValue && y.HasValue)
+            {
+                return x.Value == y.Value && x.Value != 1;
+            }
+            return x.HasValue == y.HasValue;
+        }
+
+        public int GetHashCode([DisallowNull] int? obj)
+        {
+            return obj.HasValue ? obj.Value : -1;
+        }
+
+    }
+
+    enum Empty2
+    {
+        Test = 0
+    }
+
+    enum Empty
+    {
+        Normal = 0,
+        Test = 1
     }
 
     public interface IThing
